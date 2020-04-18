@@ -5,11 +5,10 @@ NodeJS binding to the Blender Python Scripting Environment
 ## Example
 ```typescript
 import { Blender } from '../src/index'
-import { join, dirname } from 'path'
 
 const bpy = new Blender()
 bpy.ops.wm.open_mainfile({ filepath: './model.blend' })
-bpy.context.scene.render.filepath = join(dirname(__filename), 'output.png')
+bpy.context.scene.render.filepath = 'output.png'
 bpy.context.scene.render.resolution_x = 800
 bpy.context.scene.render.resolution_y = 600
 bpy.context.scene.cycles.device = 'CPU'
