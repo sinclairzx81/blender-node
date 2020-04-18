@@ -7,7 +7,7 @@ NodeJS binding to the Blender Python Scripting Environment
 import { Blender } from '../src/index'
 
 const bpy = new Blender()
-bpy.ops.wm.open_mainfile({ filepath: './model.blend' })
+bpy.ops.wm.open_mainfile({ filepath: 'model.blend' })
 bpy.context.scene.render.filepath = 'output.png'
 bpy.context.scene.render.resolution_x = 800
 bpy.context.scene.render.resolution_y = 600
