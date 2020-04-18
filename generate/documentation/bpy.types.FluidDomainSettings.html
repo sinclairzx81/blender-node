@@ -1,0 +1,2429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FluidDomainSettings(bpy_struct) &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/bpy.types.FluidDomainSettings.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FluidDomainVertexVelocity(bpy_struct)" href="bpy.types.FluidDomainVertexVelocity.html" />
+    <link rel="prev" title="FloorConstraint(Constraint)" href="bpy.types.FloorConstraint.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bpy.types.html">Types (bpy.types)</a> &raquo;</li>
+        
+      <li>FluidDomainSettings(bpy_struct)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bpy.types">
+<span id="fluiddomainsettings-bpy-struct"></span><h1>FluidDomainSettings(bpy_struct)<a class="headerlink" href="#module-bpy.types" title="Permalink to this headline">¶</a></h1>
+<p>base class — <a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct" title="bpy.types.bpy_struct"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct</span></code></a></p>
+<dl class="class">
+<dt id="bpy.types.FluidDomainSettings">
+<em class="property">class </em><code class="descclassname">bpy.types.</code><code class="descname">FluidDomainSettings</code><span class="sig-paren">(</span><em>bpy_struct</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.types.FluidDomainSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fluid domain settings</p>
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.adapt_margin">
+<code class="descname">adapt_margin</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.adapt_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Margin added around fluid to minimize boundary interference</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [2, 24], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.adapt_threshold">
+<code class="descname">adapt_threshold</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.adapt_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum amount of fluid cell can contain before it is considered empty</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.additional_res">
+<code class="descname">additional_res</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.additional_res" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of additional cells</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 512], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.alpha">
+<code class="descname">alpha</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buoyant force based on smoke density (higher value results in faster rising smoke)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-5, 5], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.axis_slice_method">
+<code class="descname">axis_slice_method</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.axis_slice_method" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">FULL</span></code> Full, Slice the whole domain object.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SINGLE</span></code> Single, Perform a single slice of the domain object.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘FULL’, ‘SINGLE’], default ‘FULL’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.beta">
+<code class="descname">beta</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buoyant force based on smoke heat (higher value results in faster rising smoke)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-5, 5], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.burning_rate">
+<code class="descname">burning_rate</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.burning_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Speed of the burning reaction (higher value results in smaller flames)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, 4], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_data_format">
+<code class="descname">cache_data_format</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_data_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the file format to be used for caching volumetric data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NONE’], default ‘NONE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_directory">
+<code class="descname">cache_directory</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Directory that contains fluid cache files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">string, default “”, (never None)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_end">
+<code class="descname">cache_frame_end</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frame on which the simulation stops</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1048574], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_pause_data">
+<code class="descname">cache_frame_pause_data</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_pause_data" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-inf, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_pause_guide">
+<code class="descname">cache_frame_pause_guide</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_pause_guide" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-inf, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_pause_mesh">
+<code class="descname">cache_frame_pause_mesh</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_pause_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-inf, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_pause_noise">
+<code class="descname">cache_frame_pause_noise</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_pause_noise" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-inf, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_pause_particles">
+<code class="descname">cache_frame_pause_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_pause_particles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-inf, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_frame_start">
+<code class="descname">cache_frame_start</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_frame_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frame on which the simulation starts</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-1048574, 1048574], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_mesh_format">
+<code class="descname">cache_mesh_format</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_mesh_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the file format to be used for caching surface data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NONE’], default ‘NONE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_noise_format">
+<code class="descname">cache_noise_format</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_noise_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the file format to be used for caching noise data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NONE’], default ‘NONE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_particle_format">
+<code class="descname">cache_particle_format</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_particle_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the file format to be used for caching particle data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NONE’], default ‘NONE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cache_type">
+<code class="descname">cache_type</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cache_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the cache type of the simulation</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">REPLAY</span></code> Replay, Use the timeline to bake the scene. Pausing and resuming possible.</li>
+<li><code class="docutils literal notranslate"><span class="pre">MODULAR</span></code> Modular, Bake every stage of the simulation separately. Pausing and resuming possible.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FINAL</span></code> Final, Bake the entire simulation at once. Only generates the most essential cache files. Pausing and resuming not possible.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘REPLAY’, ‘MODULAR’, ‘FINAL’], default ‘REPLAY’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.cell_size">
+<code class="descname">cell_size</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cell_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cell Size</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 3 items in [-inf, inf], default (0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.cfl_condition">
+<code class="descname">cfl_condition</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.cfl_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximal velocity per cell (higher value results in greater timesteps)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.clipping">
+<code class="descname">clipping</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.clipping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Value under which voxels are considered empty space to optimize caching and rendering</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.coba_field">
+<code class="descname">coba_field</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.coba_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulation field to color map</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">COLOR_R</span></code> Red, Red component of the color field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">COLOR_G</span></code> Green, Green component of the color field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">COLOR_B</span></code> Blue, Blue component of the color field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">DENSITY</span></code> Density, Quantity of soot in the fluid.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FLAME</span></code> Flame, Flame field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FUEL</span></code> Fuel, Fuel field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HEAT</span></code> Heat, Temperature of the fluid.</li>
+<li><code class="docutils literal notranslate"><span class="pre">VELOCITY_X</span></code> X Velocity, X component of the velocity field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">VELOCITY_Y</span></code> Y Velocity, Y component of the velocity field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">VELOCITY_Z</span></code> Z Velocity, Z component of the velocity field.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘COLOR_R’, ‘COLOR_G’, ‘COLOR_B’, ‘DENSITY’, ‘FLAME’, ‘FUEL’, ‘HEAT’, ‘VELOCITY_X’, ‘VELOCITY_Y’, ‘VELOCITY_Z’], default ‘DENSITY’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.color_grid">
+<code class="descname">color_grid</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.color_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke color grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 32 items in [-inf, inf], default (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.color_ramp">
+<code class="descname">color_ramp</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.color_ramp" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.ColorRamp.html#bpy.types.ColorRamp" title="bpy.types.ColorRamp"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorRamp</span></code></a>, (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.data_depth">
+<code class="descname">data_depth</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.data_depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bit depth for writing all scalar (including vector) lower values reduce file size</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">16</span></code> Float (Half), Half float (16 bit data).</li>
+<li><code class="docutils literal notranslate"><span class="pre">32</span></code> Float (Full), Full float (32 bit data).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘16’, ‘32’], default ‘32’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.density_grid">
+<code class="descname">density_grid</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.density_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke density grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 32 items in [-inf, inf], default (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.display_interpolation">
+<code class="descname">display_interpolation</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.display_interpolation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolation method to use for smoke/fire volumes in solid mode</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LINEAR</span></code> Linear, Good smoothness and speed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CUBIC</span></code> Cubic, Smoothed high quality interpolation, but slower.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘LINEAR’, ‘CUBIC’], default ‘LINEAR’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.display_thickness">
+<code class="descname">display_thickness</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.display_thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thickness of smoke drawing in the viewport</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.001, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.dissolve_speed">
+<code class="descname">dissolve_speed</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.dissolve_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine how quickly the smoke dissolves (higher value makes smoke disappear faster)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 10000], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.domain_resolution">
+<code class="descname">domain_resolution</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.domain_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke Grid Resolution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int array of 3 items in [-inf, inf], default (0, 0, 0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.domain_size">
+<code class="descname">domain_size</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.domain_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Domain size in meters (longest domain side)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.001, 10000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.domain_type">
+<code class="descname">domain_type</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.domain_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change domain type of the simulation</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">GAS</span></code> Gas, Create domain for gases.</li>
+<li><code class="docutils literal notranslate"><span class="pre">LIQUID</span></code> Liquid, Create domain for liquids.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘GAS’, ‘LIQUID’], default ‘GAS’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.effector_group">
+<code class="descname">effector_group</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.effector_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit effectors to this collection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.Collection.html#bpy.types.Collection" title="bpy.types.Collection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.effector_weights">
+<code class="descname">effector_weights</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.effector_weights" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.EffectorWeights.html#bpy.types.EffectorWeights" title="bpy.types.EffectorWeights"><code class="xref py py-class docutils literal notranslate"><span class="pre">EffectorWeights</span></code></a>, (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.export_manta_script">
+<code class="descname">export_manta_script</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.export_manta_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate and export Fluidflow script from current domain settings during bake. This is only needed if you plan to analyse the cache (e.g. view grids, velocity vectors, particles) in Fluidflow directly (outside of Blender) after baking the simulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.flame_grid">
+<code class="descname">flame_grid</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flame_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke flame grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 32 items in [-inf, inf], default (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.flame_ignition">
+<code class="descname">flame_ignition</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flame_ignition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum temperature of the flames (higher value results in faster rising flames)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.5, 5], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.flame_max_temp">
+<code class="descname">flame_max_temp</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flame_max_temp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum temperature of the flames (higher value results in faster rising flames)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [1, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.flame_smoke">
+<code class="descname">flame_smoke</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flame_smoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of smoke created by burning fuel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 8], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.flame_smoke_color">
+<code class="descname">flame_smoke_color</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flame_smoke_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color of smoke emitted from burning fuel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 3 items in [0, inf], default (0.0, 0.0, 0.0)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.flame_vorticity">
+<code class="descname">flame_vorticity</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flame_vorticity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional vorticity for the flames</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 2], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.flip_ratio">
+<code class="descname">flip_ratio</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.flip_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>PIC/FLIP Ratio. A value of 1.0 will result in a completely FLIP based simulation. Use a lower value for simulations which should produce smaller splashes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.fluid_group">
+<code class="descname">fluid_group</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.fluid_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit fluid objects to this collection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.Collection.html#bpy.types.Collection" title="bpy.types.Collection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.force_collection">
+<code class="descname">force_collection</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.force_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit forces to this collection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.Collection.html#bpy.types.Collection" title="bpy.types.Collection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.fractions_threshold">
+<code class="descname">fractions_threshold</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.fractions_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines how much fluid is allowed in an obstacle cell (higher values will tag a boundary cell as an obstacle easier and reduce the boundary smoothening effect)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.001, 1], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.gravity">
+<code class="descname">gravity</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.gravity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gravity in X, Y and Z direction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 3 items in [-1000.1, 1000.1], default (0.0, 0.0, 0.0)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.guide_alpha">
+<code class="descname">guide_alpha</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.guide_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Guiding weight (higher value results in greater lag)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [1, 100], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.guide_beta">
+<code class="descname">guide_beta</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.guide_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Guiding size (higher value results in larger vortices)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 50], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.guide_parent">
+<code class="descname">guide_parent</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.guide_parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use velocities from this object for the guiding effect (object needs to have fluid modifier and be of type domain))</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.Object.html#bpy.types.Object" title="bpy.types.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.guide_source">
+<code class="descname">guide_source</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.guide_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose where to get guiding velocities from</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">DOMAIN</span></code> Domain, Use a fluid domain for guiding (domain needs to be baked already so that velocities can be extracted). Guiding domain can be of any type (i.e. gas or liquid).</li>
+<li><code class="docutils literal notranslate"><span class="pre">EFFECTOR</span></code> Effector, Use guiding (effector) objects to create fluid guiding (guiding objects should be animated and baked once set up completely).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘DOMAIN’, ‘EFFECTOR’], default ‘DOMAIN’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.guide_vel_factor">
+<code class="descname">guide_vel_factor</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.guide_vel_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Guiding velocity factor (higher value results in greater guiding velocities)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 100], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.has_cache_baked_any">
+<code class="descname">has_cache_baked_any</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.has_cache_baked_any" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.has_cache_baked_data">
+<code class="descname">has_cache_baked_data</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.has_cache_baked_data" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.has_cache_baked_guide">
+<code class="descname">has_cache_baked_guide</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.has_cache_baked_guide" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.has_cache_baked_mesh">
+<code class="descname">has_cache_baked_mesh</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.has_cache_baked_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.has_cache_baked_noise">
+<code class="descname">has_cache_baked_noise</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.has_cache_baked_noise" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.has_cache_baked_particles">
+<code class="descname">has_cache_baked_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.has_cache_baked_particles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.heat_grid">
+<code class="descname">heat_grid</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.heat_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke heat grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 32 items in [-inf, inf], default (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.highres_sampling">
+<code class="descname">highres_sampling</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.highres_sampling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method for sampling the high resolution flow</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘FULLSAMPLE’, ‘LINEAR’, ‘NEAREST’], default ‘NEAREST’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.is_cache_baking_any">
+<code class="descname">is_cache_baking_any</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.is_cache_baking_any" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.is_cache_baking_data">
+<code class="descname">is_cache_baking_data</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.is_cache_baking_data" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.is_cache_baking_guide">
+<code class="descname">is_cache_baking_guide</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.is_cache_baking_guide" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.is_cache_baking_mesh">
+<code class="descname">is_cache_baking_mesh</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.is_cache_baking_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.is_cache_baking_noise">
+<code class="descname">is_cache_baking_noise</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.is_cache_baking_noise" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.is_cache_baking_particles">
+<code class="descname">is_cache_baking_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.is_cache_baking_particles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_concave_lower">
+<code class="descname">mesh_concave_lower</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_concave_lower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower mesh concavity bound (high values tend to smoothen and fill out concave regions)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_concave_upper">
+<code class="descname">mesh_concave_upper</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_concave_upper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upper mesh concavity bound (high values tend to smoothen and fill out concave regions)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_generator">
+<code class="descname">mesh_generator</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Which particle levelset generator to use</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">IMPROVED</span></code> Final, Use improved particle levelset (slower but more precise and with mesh smoothening options).</li>
+<li><code class="docutils literal notranslate"><span class="pre">UNION</span></code> Preview, Use union particle levelset (faster but lower quality).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘IMPROVED’, ‘UNION’], default ‘IMPROVED’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_particle_radius">
+<code class="descname">mesh_particle_radius</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_particle_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Particle radius factor (higher value results in larger (meshed) particles). Needs to be adjusted after changing the mesh scale</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_scale">
+<code class="descname">mesh_scale</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mesh simulation is scaled up by this factor (compared to the base resolution of the domain). For best meshing, it is recommended to adjust the mesh particle radius alongside this value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_smoothen_neg">
+<code class="descname">mesh_smoothen_neg</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_smoothen_neg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative mesh smoothening</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.mesh_smoothen_pos">
+<code class="descname">mesh_smoothen_pos</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_smoothen_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positive mesh smoothening</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.mesh_vertices">
+<code class="descname">mesh_vertices</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.mesh_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertices of the fluid mesh generated by simulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.bpy_prop_collection.html#bpy.types.bpy_prop_collection" title="bpy.types.bpy_prop_collection"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_prop_collection</span></code></a> of <a class="reference internal" href="bpy.types.FluidDomainVertexVelocity.html#bpy.types.FluidDomainVertexVelocity" title="bpy.types.FluidDomainVertexVelocity"><code class="xref py py-class docutils literal notranslate"><span class="pre">FluidDomainVertexVelocity</span></code></a>, (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.noise_pos_scale">
+<code class="descname">noise_pos_scale</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.noise_pos_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale of noise (higher value results in larger vortices)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.0001, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.noise_scale">
+<code class="descname">noise_scale</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.noise_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The noise simulation is scaled up by this factor (compared to the base resolution of the domain)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.noise_strength">
+<code class="descname">noise_strength</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.noise_strength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strength of noise</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.noise_time_anim">
+<code class="descname">noise_time_anim</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.noise_time_anim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Animation time of noise</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.0001, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.noise_type">
+<code class="descname">noise_type</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.noise_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Noise method which is used during the high-res simulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NOISEWAVE’], default ‘NOISEWAVE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.openvdb_cache_compress_type">
+<code class="descname">openvdb_cache_compress_type</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.openvdb_cache_compress_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression method to be used</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ZIP</span></code> Zip, Effective but slow compression.</li>
+<li><code class="docutils literal notranslate"><span class="pre">BLOSC</span></code> Blosc, Multithreaded compression, similar in size and quality as ‘Zip’.</li>
+<li><code class="docutils literal notranslate"><span class="pre">NONE</span></code> None, Do not use any compression.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘ZIP’, ‘BLOSC’, ‘NONE’], default ‘BLOSC’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_band_width">
+<code class="descname">particle_band_width</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_band_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Particle (narrow) band width (higher value results in thicker band and more particles)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_max">
+<code class="descname">particle_max</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of particles per cell (ensures that each cell has at most this amount of particles)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1000], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_min">
+<code class="descname">particle_min</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum number of particles per cell (ensures that each cell has at least this amount of particles)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1000], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_number">
+<code class="descname">particle_number</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Particle number factor (higher value results in more particles)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 5], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_radius">
+<code class="descname">particle_radius</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Particle radius factor. Increase this value if the simulation appears to leak volume, decrease it if the simulation seems to gain volume</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_randomness">
+<code class="descname">particle_randomness</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_randomness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomness factor for particle sampling</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.particle_scale">
+<code class="descname">particle_scale</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.particle_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The particle simulation is scaled up by this factor (compared to the base resolution of the domain)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.point_cache">
+<code class="descname">point_cache</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.point_cache" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference internal" href="bpy.types.PointCache.html#bpy.types.PointCache" title="bpy.types.PointCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointCache</span></code></a>, (readonly, never None)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.point_cache_compress_type">
+<code class="descname">point_cache_compress_type</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.point_cache_compress_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression method to be used</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CACHELIGHT</span></code> Lite, Fast but not so effective compression.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CACHEHEAVY</span></code> Heavy, Effective but slow compression.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘CACHELIGHT’, ‘CACHEHEAVY’], default ‘CACHELIGHT’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.resolution_max">
+<code class="descname">resolution_max</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.resolution_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolution used for the fluid domain. Value corresponds to the longest domain side (resolution for other domain sides is calculated automatically)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [6, 10000], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.show_velocity">
+<code class="descname">show_velocity</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.show_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle visualization of the velocity field as needles</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.simulation_method">
+<code class="descname">simulation_method</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.simulation_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the underlying simulation method</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">FLIP</span></code> FLIP, Use FLIP as the simulation method.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘FLIP’], default ‘FLIP’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.slice_axis">
+<code class="descname">slice_axis</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.slice_axis" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">AUTO</span></code> Auto, Adjust slice direction according to the view direction.</li>
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> X, Slice along the X axis.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Y</span></code> Y, Slice along the Y axis.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Z</span></code> Z, Slice along the Z axis.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘AUTO’, ‘X’, ‘Y’, ‘Z’], default ‘AUTO’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.slice_depth">
+<code class="descname">slice_depth</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.slice_depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position of the slice</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.slice_method">
+<code class="descname">slice_method</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.slice_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>How to slice the volume for viewport rendering</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">VIEW_ALIGNED</span></code> View, Slice volume parallel to the view plane.</li>
+<li><code class="docutils literal notranslate"><span class="pre">AXIS_ALIGNED</span></code> Axis, Slice volume parallel to the major axis.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘VIEW_ALIGNED’, ‘AXIS_ALIGNED’], default ‘VIEW_ALIGNED’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.slice_per_voxel">
+<code class="descname">slice_per_voxel</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.slice_per_voxel" title="Permalink to this definition">¶</a></dt>
+<dd><p>How many slices per voxel should be generated</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 100], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_boundary">
+<code class="descname">sndparticle_boundary</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_boundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>How particles that left the domain are treated</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> Delete, Delete secondary particles that are inside obstacles or left the domain.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PUSHOUT</span></code> Push Out, Push secondary particles that left the domain back into the domain.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘DELETE’, ‘PUSHOUT’], default ‘DELETE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_combined_export">
+<code class="descname">sndparticle_combined_export</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_combined_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines which particle systems are created from secondary particles</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">OFF</span></code> Off, Create a seperate particle system for every secondary particle type.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SPRAY_FOAM</span></code> Spray + Foam, Spray and foam particles are saved in the same particle system.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SPRAY_BUBBLES</span></code> Spray + Bubbles, Spray and bubble particles are saved in the same particle system.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FOAM_BUBBLES</span></code> Foam + Bubbles, Foam and bubbles particles are saved in the same particle system.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SPRAY_FOAM_BUBBLES</span></code> Spray + Foam + Bubbles, Create one particle system that contains all three secondary particle types.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘OFF’, ‘SPRAY_FOAM’, ‘SPRAY_BUBBLES’, ‘FOAM_BUBBLES’, ‘SPRAY_FOAM_BUBBLES’], default ‘OFF’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_k_b">
+<code class="descname">sndparticle_k_b</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_k_b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of buoyancy force that rises bubbles (high value results in bubble movement mainly upwards)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 100], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_k_d">
+<code class="descname">sndparticle_k_d</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_k_d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of drag force that moves bubbles along with the fluid (high value results in bubble movement mainly along with the fluid)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 100], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_k_ta">
+<code class="descname">sndparticle_k_ta</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_k_ta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of particles generated per trapped air cell per frame</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 10000], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_k_wc">
+<code class="descname">sndparticle_k_wc</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_k_wc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of particles generated per wave crest cell per frame</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 10000], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_l_max">
+<code class="descname">sndparticle_l_max</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_l_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Highest possible particle lifetime</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_l_min">
+<code class="descname">sndparticle_l_min</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_l_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lowest possible particle lifetime</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_potential_radius">
+<code class="descname">sndparticle_potential_radius</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_potential_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius to compute potential for each cell (higher values are slower but create smoother potential grids)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 4], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_tau_max_k">
+<code class="descname">sndparticle_tau_max_k</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_tau_max_k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upper clamping threshold that indicates the fluid speed where cells no longer emit more particles (higher value results in generally less particles)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_tau_max_ta">
+<code class="descname">sndparticle_tau_max_ta</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_tau_max_ta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upper clamping threshold for marking fluid cells where air is trapped (highe value results in less marked cells)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_tau_max_wc">
+<code class="descname">sndparticle_tau_max_wc</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_tau_max_wc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upper clamping threshold for marking fluid cells as wave crests (higher value results in less marked cells)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_tau_min_k">
+<code class="descname">sndparticle_tau_min_k</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_tau_min_k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower clamping threshold that indicates the fluid speed where cells start to emit particles (lower values result in generally more particles)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_tau_min_ta">
+<code class="descname">sndparticle_tau_min_ta</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_tau_min_ta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower clamping threshold for marking fluid cells where air is trapped (lower value results in more marked cells)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_tau_min_wc">
+<code class="descname">sndparticle_tau_min_wc</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_tau_min_wc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lower clamping threshold for marking fluid cells as wave crests (lower value results in more marked cells)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.sndparticle_update_radius">
+<code class="descname">sndparticle_update_radius</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.sndparticle_update_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius to compute position update for each particle (higher values are slower but particles move less chaotic)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 4], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.start_point">
+<code class="descname">start_point</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.start_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start point</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 3 items in [-inf, inf], default (0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.surface_tension">
+<code class="descname">surface_tension</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.surface_tension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Surface tension of liquid (higher value results in greater hydrophobic behaviour)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 100], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.temperature_grid">
+<code class="descname">temperature_grid</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.temperature_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke temperature grid, range 0..1 represents 0..1000K</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 32 items in [-inf, inf], default (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.time_scale">
+<code class="descname">time_scale</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.time_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust simulation speed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.0001, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.timesteps_max">
+<code class="descname">timesteps_max</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.timesteps_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of simulation steps to perform for one frame</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.timesteps_min">
+<code class="descname">timesteps_min</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.timesteps_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum number of simulation steps to perform for one frame</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_adaptive_domain">
+<code class="descname">use_adaptive_domain</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_adaptive_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapt simulation resolution and size to fluid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_adaptive_timesteps">
+<code class="descname">use_adaptive_timesteps</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_adaptive_timesteps" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_bubble_particles">
+<code class="descname">use_bubble_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_bubble_particles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create bubble particle system</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_collision_border_back">
+<code class="descname">use_collision_border_back</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_collision_border_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable collisons with back domain border</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_collision_border_bottom">
+<code class="descname">use_collision_border_bottom</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_collision_border_bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable collisons with bottom domain border</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_collision_border_front">
+<code class="descname">use_collision_border_front</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_collision_border_front" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable collisons with front domain border</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_collision_border_left">
+<code class="descname">use_collision_border_left</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_collision_border_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable collisons with left domain border</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_collision_border_right">
+<code class="descname">use_collision_border_right</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_collision_border_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable collisons with right domain border</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_collision_border_top">
+<code class="descname">use_collision_border_top</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_collision_border_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable collisons with top domain border</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_color_ramp">
+<code class="descname">use_color_ramp</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_color_ramp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a simulation field while mapping its voxels values to the colors of a ramp</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_dissolve_smoke">
+<code class="descname">use_dissolve_smoke</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_dissolve_smoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Let smoke disappear over time</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_dissolve_smoke_log">
+<code class="descname">use_dissolve_smoke_log</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_dissolve_smoke_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dissolve smoke in a logarithmic fashion. Dissolves quickly at first, but lingers longer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_flip_particles">
+<code class="descname">use_flip_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_flip_particles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create liquid particle system</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_foam_particles">
+<code class="descname">use_foam_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_foam_particles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create foam particle system</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_fractions">
+<code class="descname">use_fractions</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_fractions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fractional obstacles improve and smoothen the fluid-obstacle boundary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_guide">
+<code class="descname">use_guide</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_guide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable fluid guiding</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_mesh">
+<code class="descname">use_mesh</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable fluid mesh (using amplification)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_noise">
+<code class="descname">use_noise</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable fluid noise (using amplification)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_speed_vectors">
+<code class="descname">use_speed_vectors</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_speed_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Caches velocities of mesh vertices. These will be used (automatically) when rendering with motion blur enabled</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_spray_particles">
+<code class="descname">use_spray_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_spray_particles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create spray particle system</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.use_tracer_particles">
+<code class="descname">use_tracer_particles</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.use_tracer_particles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create tracer particle system</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.vector_display_type">
+<code class="descname">vector_display_type</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.vector_display_type" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">NEEDLE</span></code> Needle, Display vectors as needles.</li>
+<li><code class="docutils literal notranslate"><span class="pre">STREAMLINE</span></code> Streamlines, Display vectors as streamlines.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NEEDLE’, ‘STREAMLINE’], default ‘NEEDLE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.vector_scale">
+<code class="descname">vector_scale</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.vector_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplier for scaling the vectors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1000], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="bpy.types.FluidDomainSettings.velocity_grid">
+<code class="descname">velocity_grid</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.velocity_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoke velocity grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float array of 32 items in [-inf, inf], default (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (readonly)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.viscosity_base">
+<code class="descname">viscosity_base</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.viscosity_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Viscosity setting: value that is multiplied by 10 to the power of (exponent*-1)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.viscosity_exponent">
+<code class="descname">viscosity_exponent</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.viscosity_exponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative exponent for the viscosity value (to simplify entering small values e.g. 5*10^-6)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 10], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.FluidDomainSettings.vorticity">
+<code class="descname">vorticity</code><a class="headerlink" href="#bpy.types.FluidDomainSettings.vorticity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of turbulence and rotation in smoke</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 4], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="bpy.types.FluidDomainSettings.bl_rna_get_subclass">
+<em class="property">classmethod </em><code class="descname">bl_rna_get_subclass</code><span class="sig-paren">(</span><em>id</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.types.FluidDomainSettings.bl_rna_get_subclass" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>string</em>) – The RNA type identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The RNA type or default when not found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="bpy.types.Struct.html#bpy.types.Struct" title="bpy.types.Struct"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy.types.Struct</span></code></a> subclass</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="bpy.types.FluidDomainSettings.bl_rna_get_subclass_py">
+<em class="property">classmethod </em><code class="descname">bl_rna_get_subclass_py</code><span class="sig-paren">(</span><em>id</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.types.FluidDomainSettings.bl_rna_get_subclass_py" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>string</em>) – The RNA type identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The class or default when not found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Inherited Properties</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.id_data" title="bpy.types.bpy_struct.id_data"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.id_data</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+</ul>
+</td></tr></table>
+<p class="rubric">Inherited Functions</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.as_pointer" title="bpy.types.bpy_struct.as_pointer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.as_pointer</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_add" title="bpy.types.bpy_struct.driver_add"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.driver_add</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_remove" title="bpy.types.bpy_struct.driver_remove"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.driver_remove</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.get" title="bpy.types.bpy_struct.get"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.get</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_hidden" title="bpy.types.bpy_struct.is_property_hidden"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.is_property_hidden</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_overridable_library" title="bpy.types.bpy_struct.is_property_overridable_library"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.is_property_overridable_library</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_readonly" title="bpy.types.bpy_struct.is_property_readonly"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.is_property_readonly</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_set" title="bpy.types.bpy_struct.is_property_set"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.is_property_set</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.items" title="bpy.types.bpy_struct.items"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.items</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_delete" title="bpy.types.bpy_struct.keyframe_delete"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.keyframe_delete</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_insert" title="bpy.types.bpy_struct.keyframe_insert"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.keyframe_insert</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keys" title="bpy.types.bpy_struct.keys"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.keys</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_from_id" title="bpy.types.bpy_struct.path_from_id"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.path_from_id</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_resolve" title="bpy.types.bpy_struct.path_resolve"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.path_resolve</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.pop" title="bpy.types.bpy_struct.pop"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.pop</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.property_overridable_library_set" title="bpy.types.bpy_struct.property_overridable_library_set"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.property_overridable_library_set</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.property_unset" title="bpy.types.bpy_struct.property_unset"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.property_unset</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.type_recast" title="bpy.types.bpy_struct.type_recast"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.type_recast</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.values" title="bpy.types.bpy_struct.values"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_struct.values</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">References</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.FluidModifier.html#bpy.types.FluidModifier.domain_settings" title="bpy.types.FluidModifier.domain_settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">FluidModifier.domain_settings</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+</ul>
+</td></tr></table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bpy.types.FluidDomainVertexVelocity.html" class="btn btn-neutral float-right" title="FluidDomainVertexVelocity(bpy_struct)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpy.types.FloorConstraint.html" class="btn btn-neutral float-left" title="FloorConstraint(Constraint)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

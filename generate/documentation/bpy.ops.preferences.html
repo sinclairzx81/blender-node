@@ -1,0 +1,676 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Preferences Operators &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/bpy.ops.preferences.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ptcache Operators" href="bpy.ops.ptcache.html" />
+    <link rel="prev" title="Poselib Operators" href="bpy.ops.poselib.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bpy.ops.html">Operators (bpy.ops)</a> &raquo;</li>
+        
+      <li>Preferences Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bpy.ops.preferences">
+<span id="preferences-operators"></span><h1>Preferences Operators<a class="headerlink" href="#module-bpy.ops.preferences" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_disable">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_disable</code><span class="sig-paren">(</span><em>module=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable an add-on</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Module, Module name of the add-on to disable</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$481">startup/bl_operators/userpref.py:481</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_enable">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_enable</code><span class="sig-paren">(</span><em>module=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable an add-on</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Module, Module name of the add-on to enable</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$435">startup/bl_operators/userpref.py:435</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_expand">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_expand</code><span class="sig-paren">(</span><em>module=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_expand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display information and preferences for this add-on</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Module, Module name of the add-on to expand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$804">startup/bl_operators/userpref.py:804</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_install">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_install</code><span class="sig-paren">(</span><em>overwrite=True</em>, <em>target='DEFAULT'</em>, <em>filepath=&quot;&quot;</em>, <em>filter_folder=True</em>, <em>filter_python=True</em>, <em>filter_glob=&quot;*.py;*.zip&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install an add-on</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>overwrite</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Overwrite, Remove existing add-ons with the same ID</li>
+<li><strong>target</strong> (<em>enum in</em><em> [</em><em>'DEFAULT'</em><em>, </em><em>'PREFS'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Target Path</li>
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filepath</li>
+<li><strong>filter_folder</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter folders</li>
+<li><strong>filter_python</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter python</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$613">startup/bl_operators/userpref.py:613</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_refresh">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan add-on directories for new modules</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$567">startup/bl_operators/userpref.py:567</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_remove">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_remove</code><span class="sig-paren">(</span><em>module=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the add-on from the file system</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Module, Module name of the add-on to remove</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$759">startup/bl_operators/userpref.py:759</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.addon_show">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">addon_show</code><span class="sig-paren">(</span><em>module=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.addon_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show add-on preferences</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Module, Module name of the add-on to expand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$828">startup/bl_operators/userpref.py:828</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.app_template_install">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">app_template_install</code><span class="sig-paren">(</span><em>overwrite=True</em>, <em>filepath=&quot;&quot;</em>, <em>filter_folder=True</em>, <em>filter_glob=&quot;*.zip&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.app_template_install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install an application-template</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>overwrite</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Overwrite, Remove existing template with the same ID</li>
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filepath</li>
+<li><strong>filter_folder</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter folders</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$874">startup/bl_operators/userpref.py:874</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.copy_prev">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">copy_prev</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.copy_prev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy settings from previous version</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$150">startup/bl_operators/userpref.py:150</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyconfig_activate">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyconfig_activate</code><span class="sig-paren">(</span><em>filepath=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyconfig_activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undocumented <cite>contribute &lt;https://developer.blender.org/T51061&gt;</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filepath</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$99">startup/bl_operators/userpref.py:99</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyconfig_export">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyconfig_export</code><span class="sig-paren">(</span><em>all=False</em>, <em>filepath=&quot;keymap.py&quot;</em>, <em>filter_folder=True</em>, <em>filter_text=True</em>, <em>filter_python=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyconfig_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export key configuration to a python script</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>all</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – All Keymaps, Write all keymaps (not just user modified)</li>
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filepath</li>
+<li><strong>filter_folder</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter folders</li>
+<li><strong>filter_text</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter text</li>
+<li><strong>filter_python</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter python</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$283">startup/bl_operators/userpref.py:283</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyconfig_import">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyconfig_import</code><span class="sig-paren">(</span><em>filepath=&quot;keymap.py&quot;</em>, <em>filter_folder=True</em>, <em>filter_text=True</em>, <em>filter_python=True</em>, <em>keep_original=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyconfig_import" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import key configuration from a python script</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filepath</li>
+<li><strong>filter_folder</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter folders</li>
+<li><strong>filter_text</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter text</li>
+<li><strong>filter_python</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter python</li>
+<li><strong>keep_original</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Keep original, Keep original file after copying to configuration folder</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$216">startup/bl_operators/userpref.py:216</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyconfig_remove">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyconfig_remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyconfig_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove key config</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$415">startup/bl_operators/userpref.py:415</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyconfig_test">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyconfig_test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyconfig_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test key-config for conflicts</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$174">startup/bl_operators/userpref.py:174</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyitem_add">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyitem_add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyitem_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add key map item</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$363">startup/bl_operators/userpref.py:363</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyitem_remove">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyitem_remove</code><span class="sig-paren">(</span><em>item_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyitem_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove key map item</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item_id</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Item Identifier, Identifier of the item to remove</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$395">startup/bl_operators/userpref.py:395</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keyitem_restore">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keyitem_restore</code><span class="sig-paren">(</span><em>item_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keyitem_restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore key map item</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item_id</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Item Identifier, Identifier of the item to remove</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$348">startup/bl_operators/userpref.py:348</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.keymap_restore">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">keymap_restore</code><span class="sig-paren">(</span><em>all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.keymap_restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore key map(s)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>all</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – All Keymaps, Restore all keymaps to default</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$319">startup/bl_operators/userpref.py:319</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.reset_default_theme">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">reset_default_theme</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.reset_default_theme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset to the default theme colors</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.studiolight_copy_settings">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">studiolight_copy_settings</code><span class="sig-paren">(</span><em>index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.studiolight_copy_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy Studio Light settings to the Studio light editor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – index</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$1099">startup/bl_operators/userpref.py:1099</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.studiolight_install">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">studiolight_install</code><span class="sig-paren">(</span><em>files=None</em>, <em>directory=&quot;&quot;</em>, <em>filter_folder=True</em>, <em>filter_glob=&quot;*.png;*.jpg;*.hdr;*.exr&quot;</em>, <em>type='MATCAP'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.studiolight_install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install a user defined studio light</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>files</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_prop_collection</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorFileListElement</span></code>, (optional)) – File Path</li>
+<li><strong>directory</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – directory</li>
+<li><strong>filter_folder</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter folders</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+<li><strong>type</strong> (<em>enum in</em><em> [</em><em>'MATCAP'</em><em>, </em><em>'WORLD'</em><em>, </em><em>'STUDIO'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$980">startup/bl_operators/userpref.py:980</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.studiolight_new">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">studiolight_new</code><span class="sig-paren">(</span><em>filename=&quot;StudioLight&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.studiolight_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save custom studio light from the studio light editor settings</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$1026">startup/bl_operators/userpref.py:1026</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.studiolight_show">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">studiolight_show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.studiolight_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show light preferences</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$1121">startup/bl_operators/userpref.py:1121</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.studiolight_uninstall">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">studiolight_uninstall</code><span class="sig-paren">(</span><em>index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.studiolight_uninstall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Studio Light</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – index</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$1076">startup/bl_operators/userpref.py:1076</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.preferences.theme_install">
+<code class="descclassname">bpy.ops.preferences.</code><code class="descname">theme_install</code><span class="sig-paren">(</span><em>overwrite=True</em>, <em>filepath=&quot;&quot;</em>, <em>filter_folder=True</em>, <em>filter_glob=&quot;*.xml&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.preferences.theme_install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load and apply a Blender XML theme file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>overwrite</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Overwrite, Remove existing theme file if exists</li>
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filepath</li>
+<li><strong>filter_folder</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Filter folders</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/B/browse/master/release/scripts/startup/bl_operators/userpref.py$523">startup/bl_operators/userpref.py:523</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bpy.ops.ptcache.html" class="btn btn-neutral float-right" title="Ptcache Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpy.ops.poselib.html" class="btn btn-neutral float-left" title="Poselib Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

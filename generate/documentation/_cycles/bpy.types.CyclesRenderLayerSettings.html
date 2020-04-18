@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>CyclesRenderLayerSettings(PropertyGroup) &#8212; Blender 2.79.0 855d2955c49 - API documentation</title>
+  <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT:    './',
+      VERSION:     '2.79.0 855d2955c49 - API',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE:  false,
+      SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+  <script type="text/javascript" src="_static/jquery.js"></script>
+  <script type="text/javascript" src="_static/underscore.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="CyclesRenderSettings(PropertyGroup)" href="bpy.types.CyclesRenderSettings.html" />
+  <link rel="prev" title="CyclesPreferences(AddonPreferences)" href="bpy.types.CyclesPreferences.html" /> 
+</head>
+<body>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right" style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           accesskey="I">index</a></li>
+      <li class="right" >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesRenderSettings.html" title="CyclesRenderSettings(PropertyGroup)"
+           accesskey="N">next</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesPreferences.html" title="CyclesPreferences(AddonPreferences)"
+           accesskey="P">previous</a> |</li>
+      <li class="nav-item nav-item-0"><a href="contents.html">Blender 2.79.0 855d2955c49 - API documentation</a> &#187;</li>
+        <li class="nav-item nav-item-1"><a href="bpy.types.html" accesskey="U">Types (bpy.types)</a> &#187;</li> 
+    </ul>
+  </div>  
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+        <div class="body" role="main">
+          
+<div class="section" id="module-bpy.types">
+<span id="cyclesrenderlayersettings-propertygroup"></span><h1>CyclesRenderLayerSettings(PropertyGroup)<a class="headerlink" href="#module-bpy.types" title="Permalink to this headline">¶</a></h1>
+<p>base classes — <a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct" title="bpy.types.bpy_struct"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct</span></code></a>, <a class="reference internal" href="bpy.types.PropertyGroup.html#bpy.types.PropertyGroup" title="bpy.types.PropertyGroup"><code class="xref py py-class docutils literal"><span class="pre">PropertyGroup</span></code></a></p>
+<dl class="class">
+<dt id="bpy.types.CyclesRenderLayerSettings">
+<em class="property">class </em><code class="descclassname">bpy.types.</code><code class="descname">CyclesRenderLayerSettings</code><span class="sig-paren">(</span><em>PropertyGroup</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_diffuse_direct">
+<code class="descname">denoising_diffuse_direct</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_diffuse_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the direct diffuse lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_diffuse_indirect">
+<code class="descname">denoising_diffuse_indirect</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_diffuse_indirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the indirect diffuse lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_feature_strength">
+<code class="descname">denoising_feature_strength</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_feature_strength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls removal of noisy image feature passes (lower values preserve more detail, but aren’t as smooth)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.5</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_glossy_direct">
+<code class="descname">denoising_glossy_direct</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_glossy_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the direct glossy lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_glossy_indirect">
+<code class="descname">denoising_glossy_indirect</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_glossy_indirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the indirect glossy lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_radius">
+<code class="descname">denoising_radius</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the image area that’s used to denoise a pixel (higher values are smoother, but might lose detail and are slower)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 25], default 8</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_relative_pca">
+<code class="descname">denoising_relative_pca</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_relative_pca" title="Permalink to this definition">¶</a></dt>
+<dd><p>When removing pixels that don’t carry information, use a relative threshold instead of an absolute one (can help to reduce artifacts, but might cause detail loss around edges)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_store_passes">
+<code class="descname">denoising_store_passes</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_store_passes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the denoising feature passes and the noisy image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_strength">
+<code class="descname">denoising_strength</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_strength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls neighbor pixel weighting for the denoising filter (lower values preserve more detail, but aren’t as smooth)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.5</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_subsurface_direct">
+<code class="descname">denoising_subsurface_direct</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_subsurface_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the direct subsurface lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_subsurface_indirect">
+<code class="descname">denoising_subsurface_indirect</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_subsurface_indirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the indirect subsurface lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_transmission_direct">
+<code class="descname">denoising_transmission_direct</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_transmission_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the direct transmission lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.denoising_transmission_indirect">
+<code class="descname">denoising_transmission_indirect</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.denoising_transmission_indirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the indirect transmission lighting</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.pass_debug_bvh_intersections">
+<code class="descname">pass_debug_bvh_intersections</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.pass_debug_bvh_intersections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store Debug BVH Intersections</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.pass_debug_bvh_traversed_instances">
+<code class="descname">pass_debug_bvh_traversed_instances</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.pass_debug_bvh_traversed_instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store Debug BVH Traversed Instances pass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.pass_debug_bvh_traversed_nodes">
+<code class="descname">pass_debug_bvh_traversed_nodes</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.pass_debug_bvh_traversed_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store Debug BVH Traversed Nodes pass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.pass_debug_ray_bounces">
+<code class="descname">pass_debug_ray_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.pass_debug_ray_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store Debug Ray Bounces pass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderLayerSettings.use_denoising">
+<code class="descname">use_denoising</code><a class="headerlink" href="#bpy.types.CyclesRenderLayerSettings.use_denoising" title="Permalink to this definition">¶</a></dt>
+<dd><p>Denoise the rendered image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Inherited Properties</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.id_data" title="bpy.types.bpy_struct.id_data"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.id_data</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.PropertyGroup.html#bpy.types.PropertyGroup.name" title="bpy.types.PropertyGroup.name"><code class="xref py py-class docutils literal"><span class="pre">PropertyGroup.name</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">Inherited Functions</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.as_pointer" title="bpy.types.bpy_struct.as_pointer"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.as_pointer</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_add" title="bpy.types.bpy_struct.driver_add"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.driver_add</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_remove" title="bpy.types.bpy_struct.driver_remove"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.driver_remove</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.get" title="bpy.types.bpy_struct.get"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.get</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_hidden" title="bpy.types.bpy_struct.is_property_hidden"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_hidden</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_readonly" title="bpy.types.bpy_struct.is_property_readonly"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_readonly</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_set" title="bpy.types.bpy_struct.is_property_set"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_set</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.items" title="bpy.types.bpy_struct.items"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.items</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_delete" title="bpy.types.bpy_struct.keyframe_delete"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keyframe_delete</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_insert" title="bpy.types.bpy_struct.keyframe_insert"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keyframe_insert</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keys" title="bpy.types.bpy_struct.keys"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keys</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_from_id" title="bpy.types.bpy_struct.path_from_id"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.path_from_id</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_resolve" title="bpy.types.bpy_struct.path_resolve"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.path_resolve</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.property_unset" title="bpy.types.bpy_struct.property_unset"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.property_unset</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.type_recast" title="bpy.types.bpy_struct.type_recast"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.type_recast</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.values" title="bpy.types.bpy_struct.values"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.values</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">References</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.SceneRenderLayer.html#bpy.types.SceneRenderLayer.cycles" title="bpy.types.SceneRenderLayer.cycles"><code class="xref py py-class docutils literal"><span class="pre">SceneRenderLayer.cycles</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+</ul>
+</td></tr></table>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+          <p class="logo"><a href="contents.html">
+            <img class="logo" src="_static/blender_logo.svg" alt="Logo"/>
+          </a></p>
+<h4>Previous topic</h4>
+<p class="topless"><a href="bpy.types.CyclesPreferences.html"
+                      title="previous chapter">CyclesPreferences(AddonPreferences)</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="bpy.types.CyclesRenderSettings.html"
+                      title="next chapter">CyclesRenderSettings(PropertyGroup)</a></p>
+<div id="searchbox" style="display: none" role="search">
+<h3>Quick search</h3>
+  <form class="search" action="search.html" method="get">
+    <div><input type="text" name="q" /></div>
+    <div><input type="submit" value="Go" /></div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right" style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           >index</a></li>
+      <li class="right" >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesRenderSettings.html" title="CyclesRenderSettings(PropertyGroup)"
+           >next</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesPreferences.html" title="CyclesPreferences(AddonPreferences)"
+           >previous</a> |</li>
+      <li class="nav-item nav-item-0"><a href="contents.html">Blender 2.79.0 855d2955c49 - API documentation</a> &#187;</li>
+        <li class="nav-item nav-item-1"><a href="bpy.types.html" >Types (bpy.types)</a> &#187;</li> 
+    </ul>
+  </div>
+  <div class="footer" role="contentinfo">
+      &#169; Copyright Blender Foundation.
+  </div>
+</body>
+</html>

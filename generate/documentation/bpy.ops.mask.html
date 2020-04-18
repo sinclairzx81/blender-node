@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mask Operators &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/bpy.ops.mask.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Material Operators" href="bpy.ops.material.html" />
+    <link rel="prev" title="Marker Operators" href="bpy.ops.marker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bpy.ops.html">Operators (bpy.ops)</a> &raquo;</li>
+        
+      <li>Mask Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bpy.ops.mask">
+<span id="mask-operators"></span><h1>Mask Operators<a class="headerlink" href="#module-bpy.ops.mask" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bpy.ops.mask.add_feather_vertex">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">add_feather_vertex</code><span class="sig-paren">(</span><em>location=(0.0</em>, <em>0.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.add_feather_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add vertex to feather</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>location</strong> (<em>float array of 2 items in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location, Location of vertex in normalized space</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.add_feather_vertex_slide">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">add_feather_vertex_slide</code><span class="sig-paren">(</span><em>MASK_OT_add_feather_vertex=None</em>, <em>MASK_OT_slide_point=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.add_feather_vertex_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new vertex to feather and slide it</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>MASK_OT_add_feather_vertex</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MASK_OT_add_feather_vertex</span></code>, (optional)) – Add Feather Vertex, Add vertex to feather</li>
+<li><strong>MASK_OT_slide_point</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MASK_OT_slide_point</span></code>, (optional)) – Slide Point, Slide control points</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.add_vertex">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">add_vertex</code><span class="sig-paren">(</span><em>location=(0.0</em>, <em>0.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.add_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add vertex to active spline</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>location</strong> (<em>float array of 2 items in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location, Location of vertex in normalized space</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.add_vertex_slide">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">add_vertex_slide</code><span class="sig-paren">(</span><em>MASK_OT_add_vertex=None</em>, <em>MASK_OT_slide_point=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.add_vertex_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new vertex and slide it</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>MASK_OT_add_vertex</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MASK_OT_add_vertex</span></code>, (optional)) – Add Vertex, Add vertex to active spline</li>
+<li><strong>MASK_OT_slide_point</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MASK_OT_slide_point</span></code>, (optional)) – Slide Point, Slide control points</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.copy_splines">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">copy_splines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.copy_splines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy selected splines to clipboard</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.cyclic_toggle">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">cyclic_toggle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.cyclic_toggle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle cyclic for selected splines</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.delete">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete selected control points or splines</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.duplicate">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">duplicate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.duplicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate selected control points and segments between them</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.duplicate_move">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">duplicate_move</code><span class="sig-paren">(</span><em>MASK_OT_duplicate=None</em>, <em>TRANSFORM_OT_translate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.duplicate_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate mask and move</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>MASK_OT_duplicate</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MASK_OT_duplicate</span></code>, (optional)) – Duplicate Mask, Duplicate selected control points and segments between them</li>
+<li><strong>TRANSFORM_OT_translate</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TRANSFORM_OT_translate</span></code>, (optional)) – Move, Move selected items</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.feather_weight_clear">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">feather_weight_clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.feather_weight_clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the feather weight to zero</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.handle_type_set">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">handle_type_set</code><span class="sig-paren">(</span><em>type='AUTO'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.handle_type_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set type of handles for selected control points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>enum in</em><em> [</em><em>'AUTO'</em><em>, </em><em>'VECTOR'</em><em>, </em><em>'ALIGNED'</em><em>, </em><em>'ALIGNED_DOUBLESIDE'</em><em>, </em><em>'FREE'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Type, Spline type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.hide_view_clear">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">hide_view_clear</code><span class="sig-paren">(</span><em>select=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.hide_view_clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reveal the layer by setting the hide flag</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>select</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Select</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.hide_view_set">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">hide_view_set</code><span class="sig-paren">(</span><em>unselected=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.hide_view_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the layer by setting the hide flag</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unselected</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Unselected, Hide unselected rather than selected layers</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.layer_move">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">layer_move</code><span class="sig-paren">(</span><em>direction='UP'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.layer_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the active layer up/down in the list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direction</strong> (<em>enum in</em><em> [</em><em>'UP'</em><em>, </em><em>'DOWN'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Direction, Direction to move the active layer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.layer_new">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">layer_new</code><span class="sig-paren">(</span><em>name=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.layer_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new mask layer for masking</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Name, Name of new mask layer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.layer_remove">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">layer_remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.layer_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove mask layer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.new">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">new</code><span class="sig-paren">(</span><em>name=&quot;&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new mask</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – Name, Name of new mask</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.normals_make_consistent">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">normals_make_consistent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.normals_make_consistent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-calculate the direction of selected handles</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.parent_clear">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">parent_clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.parent_clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the mask’s parenting</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.parent_set">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">parent_set</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.parent_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mask’s parenting</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.paste_splines">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">paste_splines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.paste_splines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste splines from clipboard</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.primitive_circle_add">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">primitive_circle_add</code><span class="sig-paren">(</span><em>size=100.0</em>, <em>location=(0.0</em>, <em>0.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.primitive_circle_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new circle-shaped spline</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> (<em>float in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Size, Size of new circle</li>
+<li><strong>location</strong> (<em>float array of 2 items in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location, Location of new circle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.primitive_square_add">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">primitive_square_add</code><span class="sig-paren">(</span><em>size=100.0</em>, <em>location=(0.0</em>, <em>0.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.primitive_square_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new square-shaped spline</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> (<em>float in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Size, Size of new circle</li>
+<li><strong>location</strong> (<em>float array of 2 items in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location, Location of new circle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select</code><span class="sig-paren">(</span><em>extend=False</em>, <em>deselect=False</em>, <em>toggle=False</em>, <em>deselect_all=False</em>, <em>location=(0.0</em>, <em>0.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select spline points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>extend</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Extend, Extend selection instead of deselecting everything first</li>
+<li><strong>deselect</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Deselect, Remove from selection</li>
+<li><strong>toggle</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Toggle Selection, Toggle the selection</li>
+<li><strong>deselect_all</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Deselect On Nothing, Deselect all when nothing under the cursor</li>
+<li><strong>location</strong> (<em>float array of 2 items in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location, Location of vertex in normalized space</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_all">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_all</code><span class="sig-paren">(</span><em>action='TOGGLE'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change selection of all curve points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<em>enum in</em><em> [</em><em>'TOGGLE'</em><em>, </em><em>'SELECT'</em><em>, </em><em>'DESELECT'</em><em>, </em><em>'INVERT'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Action, Selection action to execute</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">TOGGLE</span></code> Toggle, Toggle selection for all elements.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> Select, Select all elements.</li>
+<li><code class="docutils literal notranslate"><span class="pre">DESELECT</span></code> Deselect, Deselect all elements.</li>
+<li><code class="docutils literal notranslate"><span class="pre">INVERT</span></code> Invert, Invert selection of all elements.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_box">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_box</code><span class="sig-paren">(</span><em>xmin=0</em>, <em>xmax=0</em>, <em>ymin=0</em>, <em>ymax=0</em>, <em>wait_for_input=True</em>, <em>mode='SET'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select curve points using box selection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xmin</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – X Min</li>
+<li><strong>xmax</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – X Max</li>
+<li><strong>ymin</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Y Min</li>
+<li><strong>ymax</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Y Max</li>
+<li><strong>wait_for_input</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Wait for Input</li>
+<li><strong>mode</strong> (<em>enum in</em><em> [</em><em>'SET'</em><em>, </em><em>'ADD'</em><em>, </em><em>'SUB'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Mode</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SET</span></code> Set, Set a new selection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ADD</span></code> Extend, Extend existing selection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SUB</span></code> Subtract, Subtract existing selection.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_circle">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_circle</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em>, <em>radius=25</em>, <em>wait_for_input=True</em>, <em>mode='SET'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select curve points using circle selection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – X</li>
+<li><strong>y</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Y</li>
+<li><strong>radius</strong> (<em>int in</em><em> [</em><em>1</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Radius</li>
+<li><strong>wait_for_input</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Wait for Input</li>
+<li><strong>mode</strong> (<em>enum in</em><em> [</em><em>'SET'</em><em>, </em><em>'ADD'</em><em>, </em><em>'SUB'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Mode</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SET</span></code> Set, Set a new selection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ADD</span></code> Extend, Extend existing selection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SUB</span></code> Subtract, Subtract existing selection.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_lasso">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_lasso</code><span class="sig-paren">(</span><em>path=None</em>, <em>mode='SET'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_lasso" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select curve points using lasso selection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_prop_collection</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorMousePath</span></code>, (optional)) – Path</li>
+<li><strong>mode</strong> (<em>enum in</em><em> [</em><em>'SET'</em><em>, </em><em>'ADD'</em><em>, </em><em>'SUB'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Mode</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SET</span></code> Set, Set a new selection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ADD</span></code> Extend, Extend existing selection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SUB</span></code> Subtract, Subtract existing selection.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_less">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_less</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_less" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deselect spline points at the boundary of each selection region</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_linked">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_linked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_linked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select all curve points linked to already selected ones</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_linked_pick">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_linked_pick</code><span class="sig-paren">(</span><em>deselect=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_linked_pick" title="Permalink to this definition">¶</a></dt>
+<dd><p>(De)select all points linked to the curve under the mouse cursor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>deselect</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Deselect</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.select_more">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">select_more</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.select_more" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select more spline points connected to initial selection</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.shape_key_clear">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">shape_key_clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.shape_key_clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove mask shape keyframe for active mask layer at the current frame</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.shape_key_feather_reset">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">shape_key_feather_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.shape_key_feather_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset feather weights on all selected points animation values</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.shape_key_insert">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">shape_key_insert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.shape_key_insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert mask shape keyframe for active mask layer at the current frame</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.shape_key_rekey">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">shape_key_rekey</code><span class="sig-paren">(</span><em>location=True</em>, <em>feather=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.shape_key_rekey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recalculate animation data on selected points for frames selected in the dopesheet</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>location</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location</li>
+<li><strong>feather</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Feather</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.slide_point">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">slide_point</code><span class="sig-paren">(</span><em>slide_feather=False</em>, <em>is_new_point=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.slide_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slide control points</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>slide_feather</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Slide Feather, First try to slide feather instead of vertex</li>
+<li><strong>is_new_point</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Slide New Point, Newly created vertex is being slid</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.slide_spline_curvature">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">slide_spline_curvature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.slide_spline_curvature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slide a point on the spline to define it’s curvature</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.mask.switch_direction">
+<code class="descclassname">bpy.ops.mask.</code><code class="descname">switch_direction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.mask.switch_direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch direction of selected splines</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bpy.ops.material.html" class="btn btn-neutral float-right" title="Material Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpy.ops.marker.html" class="btn btn-neutral float-left" title="Marker Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Import Scene Operators &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/bpy.ops.import_scene.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Info Operators" href="bpy.ops.info.html" />
+    <link rel="prev" title="Import Mesh Operators" href="bpy.ops.import_mesh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bpy.ops.html">Operators (bpy.ops)</a> &raquo;</li>
+        
+      <li>Import Scene Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bpy.ops.import_scene">
+<span id="import-scene-operators"></span><h1>Import Scene Operators<a class="headerlink" href="#module-bpy.ops.import_scene" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bpy.ops.import_scene.fbx">
+<code class="descclassname">bpy.ops.import_scene.</code><code class="descname">fbx</code><span class="sig-paren">(</span><em>filepath=&quot;&quot;</em>, <em>directory=&quot;&quot;</em>, <em>filter_glob=&quot;*.fbx&quot;</em>, <em>files=None</em>, <em>ui_tab='MAIN'</em>, <em>use_manual_orientation=False</em>, <em>global_scale=1.0</em>, <em>bake_space_transform=False</em>, <em>use_custom_normals=True</em>, <em>use_image_search=True</em>, <em>use_alpha_decals=False</em>, <em>decal_offset=0.0</em>, <em>use_anim=True</em>, <em>anim_offset=1.0</em>, <em>use_subsurf=False</em>, <em>use_custom_props=True</em>, <em>use_custom_props_enum_as_string=True</em>, <em>ignore_leaf_bones=False</em>, <em>force_connect_children=False</em>, <em>automatic_bone_orientation=False</em>, <em>primary_bone_axis='Y'</em>, <em>secondary_bone_axis='X'</em>, <em>use_prepost_rot=True</em>, <em>axis_forward='-Z'</em>, <em>axis_up='Y'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.import_scene.fbx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a FBX file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – File Path, Filepath used for importing the file</li>
+<li><strong>directory</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – directory</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+<li><strong>files</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_prop_collection</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorFileListElement</span></code>, (optional)) – File Path</li>
+<li><strong>ui_tab</strong> (<em>enum in</em><em> [</em><em>'MAIN'</em><em>, </em><em>'ARMATURE'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>ui_tab, Import options categories</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">MAIN</span></code> Main, Main basic settings.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ARMATURE</span></code> Armatures, Armature-related settings.</li>
+</ul>
+</li>
+<li><strong>use_manual_orientation</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Manual Orientation, Specify orientation and scale, instead of using embedded data in FBX file</li>
+<li><strong>global_scale</strong> (<em>float in</em><em> [</em><em>0.001</em><em>, </em><em>1000</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Scale</li>
+<li><strong>bake_space_transform</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – !EXPERIMENTAL! Apply Transform, Bake space transform into object data, avoids getting unwanted rotations to objects when target space is not aligned with Blender’s space (WARNING! experimental option, use at own risks, known broken with armatures/animations)</li>
+<li><strong>use_custom_normals</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Import Normals, Import custom normals, if available (otherwise Blender will recompute them)</li>
+<li><strong>use_image_search</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Image Search, Search subdirs for any associated images (WARNING: may be slow)</li>
+<li><strong>use_alpha_decals</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Alpha Decals, Treat materials with alpha as decals (no shadow casting)</li>
+<li><strong>decal_offset</strong> (<em>float in</em><em> [</em><em>0</em><em>, </em><em>1</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Decal Offset, Displace geometry of alpha meshes</li>
+<li><strong>use_anim</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Import Animation, Import FBX animation</li>
+<li><strong>anim_offset</strong> (<em>float in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Animation Offset, Offset to apply to animation during import, in frames</li>
+<li><strong>use_subsurf</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Import Subdivision Surface, Import FBX subdivision information as subdivision surface modifiers</li>
+<li><strong>use_custom_props</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Import User Properties, Import user properties as custom properties</li>
+<li><strong>use_custom_props_enum_as_string</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Import Enums As Strings, Store enumeration values as strings</li>
+<li><strong>ignore_leaf_bones</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Ignore Leaf Bones, Ignore the last bone at the end of each chain (used to mark the length of the previous bone)</li>
+<li><strong>force_connect_children</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Force Connect Children, Force connection of children bones to their parent, even if their computed head/tail positions do not match (can be useful with pure-joints-type armatures)</li>
+<li><strong>automatic_bone_orientation</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Automatic Bone Orientation, Try to align the major bone axis with the bone children</li>
+<li><strong>primary_bone_axis</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Primary Bone Axis</li>
+<li><strong>secondary_bone_axis</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Secondary Bone Axis</li>
+<li><strong>use_prepost_rot</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Use Pre/Post Rotation, Use pre/post rotation from FBX transform (you may have to disable that in some cases)</li>
+<li><strong>axis_forward</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Forward</li>
+<li><strong>axis_up</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Up</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/BA/addons/io_scene_fbx/__init__.py$206">addons/io_scene_fbx/__init__.py:206</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.import_scene.gltf">
+<code class="descclassname">bpy.ops.import_scene.</code><code class="descname">gltf</code><span class="sig-paren">(</span><em>filepath=&quot;&quot;</em>, <em>filter_glob=&quot;*.glb;*.gltf&quot;</em>, <em>files=None</em>, <em>loglevel=0</em>, <em>import_pack_images=True</em>, <em>import_shading='NORMALS'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.import_scene.gltf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a glTF 2.0 file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – File Path, Filepath used for importing the file</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+<li><strong>files</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_prop_collection</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorFileListElement</span></code>, (optional)) – File Path</li>
+<li><strong>loglevel</strong> (<em>int in</em><em> [</em><em>-inf</em><em>, </em><em>inf</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Log Level, Log Level</li>
+<li><strong>import_pack_images</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Pack images, Pack all images into .blend file</li>
+<li><strong>import_shading</strong> (<em>enum in</em><em> [</em><em>'NORMALS'</em><em>, </em><em>'FLAT'</em><em>, </em><em>'SMOOTH'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Shading, How normals are computed during import</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/BA/addons/io_scene_gltf2/__init__.py$849">addons/io_scene_gltf2/__init__.py:849</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.import_scene.obj">
+<code class="descclassname">bpy.ops.import_scene.</code><code class="descname">obj</code><span class="sig-paren">(</span><em>filepath=&quot;&quot;</em>, <em>filter_glob=&quot;*.obj;*.mtl&quot;</em>, <em>use_edges=True</em>, <em>use_smooth_groups=True</em>, <em>use_split_objects=True</em>, <em>use_split_groups=False</em>, <em>use_groups_as_vgroups=False</em>, <em>use_image_search=True</em>, <em>split_mode='ON'</em>, <em>global_clight_size=0.0</em>, <em>axis_forward='-Z'</em>, <em>axis_up='Y'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.import_scene.obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a Wavefront OBJ File</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – File Path, Filepath used for importing the file</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+<li><strong>use_edges</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Lines, Import lines and faces with 2 verts as edge</li>
+<li><strong>use_smooth_groups</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Smooth Groups, Surround smooth groups by sharp edges</li>
+<li><strong>use_split_objects</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Object, Import OBJ Objects into Blender Objects</li>
+<li><strong>use_split_groups</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Group, Import OBJ Groups into Blender Objects</li>
+<li><strong>use_groups_as_vgroups</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Poly Groups, Import OBJ groups as vertex groups</li>
+<li><strong>use_image_search</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Image Search, Search subdirs for any associated images (Warning, may be slow)</li>
+<li><strong>split_mode</strong> (<em>enum in</em><em> [</em><em>'ON'</em><em>, </em><em>'OFF'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Split</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">ON</span></code> Split, Split geometry, omits unused verts.</li>
+<li><code class="docutils literal notranslate"><span class="pre">OFF</span></code> Keep Vert Order, Keep vertex order from file.</li>
+</ul>
+</li>
+<li><strong>global_clight_size</strong> (<em>float in</em><em> [</em><em>0</em><em>, </em><em>1000</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Clamp Size, Clamp bounds under this value (zero to disable)</li>
+<li><strong>axis_forward</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Forward</li>
+<li><strong>axis_up</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Up</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/BA/addons/io_scene_obj/__init__.py$121">addons/io_scene_obj/__init__.py:121</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.import_scene.x3d">
+<code class="descclassname">bpy.ops.import_scene.</code><code class="descname">x3d</code><span class="sig-paren">(</span><em>filepath=&quot;&quot;</em>, <em>filter_glob=&quot;*.x3d;*.wrl&quot;</em>, <em>axis_forward='Z'</em>, <em>axis_up='Y'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.import_scene.x3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import an X3D or VRML2 file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filepath</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – File Path, Filepath used for importing the file</li>
+<li><strong>filter_glob</strong> (<em>string</em><em>, </em><em>(</em><em>optional</em><em>, </em><em>never None</em><em>)</em>) – filter_glob</li>
+<li><strong>axis_forward</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Forward</li>
+<li><strong>axis_up</strong> (<em>enum in</em><em> [</em><em>'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'</em><em>, </em><em>'-X'</em><em>, </em><em>'-Y'</em><em>, </em><em>'-Z'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Up</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">File:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://developer.blender.org/diffusion/BA/addons/io_scene_x3d/__init__.py$67">addons/io_scene_x3d/__init__.py:67</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bpy.ops.info.html" class="btn btn-neutral float-right" title="Info Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpy.ops.import_mesh.html" class="btn btn-neutral float-left" title="Import Mesh Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

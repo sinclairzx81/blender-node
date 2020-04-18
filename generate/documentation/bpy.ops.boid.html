@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Boid Operators &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/bpy.ops.boid.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Brush Operators" href="bpy.ops.brush.html" />
+    <link rel="prev" title="Armature Operators" href="bpy.ops.armature.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bpy.ops.html">Operators (bpy.ops)</a> &raquo;</li>
+        
+      <li>Boid Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bpy.ops.boid">
+<span id="boid-operators"></span><h1>Boid Operators<a class="headerlink" href="#module-bpy.ops.boid" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bpy.ops.boid.rule_add">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">rule_add</code><span class="sig-paren">(</span><em>type='GOAL'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.rule_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a boid rule to the current boid state</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>enum in</em><em> [</em><em>'GOAL'</em><em>, </em><em>'AVOID'</em><em>, </em><em>'AVOID_COLLISION'</em><em>, </em><em>'SEPARATE'</em><em>, </em><em>'FLOCK'</em><em>, </em><em>'FOLLOW_LEADER'</em><em>, </em><em>'AVERAGE_SPEED'</em><em>, </em><em>'FIGHT'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Type</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">GOAL</span></code> Goal, Go to assigned object or loudest assigned signal source.</li>
+<li><code class="docutils literal notranslate"><span class="pre">AVOID</span></code> Avoid, Get away from assigned object or loudest assigned signal source.</li>
+<li><code class="docutils literal notranslate"><span class="pre">AVOID_COLLISION</span></code> Avoid Collision, Maneuver to avoid collisions with other boids and deflector objects in near future.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SEPARATE</span></code> Separate, Keep from going through other boids.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FLOCK</span></code> Flock, Move to center of neighbors and match their velocity.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FOLLOW_LEADER</span></code> Follow Leader, Follow a boid or assigned object.</li>
+<li><code class="docutils literal notranslate"><span class="pre">AVERAGE_SPEED</span></code> Average Speed, Maintain speed, flight level or wander.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FIGHT</span></code> Fight, Go to closest enemy and attack when in range.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.rule_del">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">rule_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.rule_del" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete current boid rule</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.rule_move_down">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">rule_move_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.rule_move_down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move boid rule down in the list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.rule_move_up">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">rule_move_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.rule_move_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move boid rule up in the list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.state_add">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">state_add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.state_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a boid state to the particle system</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.state_del">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">state_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.state_del" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete current boid state</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.state_move_down">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">state_move_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.state_move_down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move boid state down in the list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.boid.state_move_up">
+<code class="descclassname">bpy.ops.boid.</code><code class="descname">state_move_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.boid.state_move_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move boid state up in the list</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bpy.ops.brush.html" class="btn btn-neutral float-right" title="Brush Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpy.ops.armature.html" class="btn btn-neutral float-left" title="Armature Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

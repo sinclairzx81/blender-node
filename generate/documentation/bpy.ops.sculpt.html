@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sculpt Operators &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/bpy.ops.sculpt.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sequencer Operators" href="bpy.ops.sequencer.html" />
+    <link rel="prev" title="Script Operators" href="bpy.ops.script.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bpy.ops.html">Operators (bpy.ops)</a> &raquo;</li>
+        
+      <li>Sculpt Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bpy.ops.sculpt">
+<span id="sculpt-operators"></span><h1>Sculpt Operators<a class="headerlink" href="#module-bpy.ops.sculpt" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bpy.ops.sculpt.brush_stroke">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">brush_stroke</code><span class="sig-paren">(</span><em>stroke=None</em>, <em>mode='NORMAL'</em>, <em>ignore_background_click=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.brush_stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sculpt a stroke into the geometry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stroke</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bpy_prop_collection</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorStrokeElement</span></code>, (optional)) – Stroke</li>
+<li><strong>mode</strong> (<em>enum in</em><em> [</em><em>'NORMAL'</em><em>, </em><em>'INVERT'</em><em>, </em><em>'SMOOTH'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Stroke Mode, Action taken when a paint stroke is made</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> Regular, Apply brush normally.</li>
+<li><code class="docutils literal notranslate"><span class="pre">INVERT</span></code> Invert, Invert action of brush for duration of stroke.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SMOOTH</span></code> Smooth, Switch brush to smooth mode for duration of stroke.</li>
+</ul>
+</li>
+<li><strong>ignore_background_click</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Ignore Background Click, Clicks on the background do not start the stroke</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.detail_flood_fill">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">detail_flood_fill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.detail_flood_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flood fill the mesh with the selected detail setting</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.dirty_mask">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">dirty_mask</code><span class="sig-paren">(</span><em>dirty_only=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.dirty_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a mask based on the geometry cavity and pointiness</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dirty_only</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Dirty Only, Don’t calculate cleans for convex areas</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.dynamic_topology_toggle">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">dynamic_topology_toggle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.dynamic_topology_toggle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamic topology alters the mesh topology while sculpting</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.mask_expand">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">mask_expand</code><span class="sig-paren">(</span><em>invert=True</em>, <em>use_cursor=True</em>, <em>update_pivot=True</em>, <em>smooth_iterations=2</em>, <em>mask_speed=5</em>, <em>use_normals=True</em>, <em>keep_previous_mask=False</em>, <em>edge_sensitivity=300</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.mask_expand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expands a mask from the initial active vertex under the cursor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>invert</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Invert, Invert the new mask</li>
+<li><strong>use_cursor</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Use Cursor, Expand the mask to the cursor position</li>
+<li><strong>update_pivot</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Update Pivot Position, Set the pivot position to the mask border after creating the mask</li>
+<li><strong>smooth_iterations</strong> (<em>int in</em><em> [</em><em>0</em><em>, </em><em>10</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Smooth iterations</li>
+<li><strong>mask_speed</strong> (<em>int in</em><em> [</em><em>1</em><em>, </em><em>10</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Mask speed</li>
+<li><strong>use_normals</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Use Normals, Generate the mask using the normals and curvature of the model</li>
+<li><strong>keep_previous_mask</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Keep Previous Mask, Generate the new mask on top of the current one</li>
+<li><strong>edge_sensitivity</strong> (<em>int in</em><em> [</em><em>0</em><em>, </em><em>2000</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Edge Detection Sensitivity, Sensitivity for expanding the mask across sculpted sharp edges when using normals to generate the mask</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.mask_filter">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">mask_filter</code><span class="sig-paren">(</span><em>filter_type='SMOOTH'</em>, <em>iterations=1</em>, <em>auto_iteration_count=False</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.mask_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a filter to modify the current mask</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filter_type</strong> (<em>enum in</em><em> [</em><em>'SMOOTH'</em><em>, </em><em>'SHARPEN'</em><em>, </em><em>'GROW'</em><em>, </em><em>'SHRINK'</em><em>, </em><em>'CONTRAST_INCREASE'</em><em>, </em><em>'CONTRAST_DECREASE'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Type, Filter that is going to be applied to the mask</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SMOOTH</span></code> Smooth Mask, Smooth mask.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SHARPEN</span></code> Sharpen Mask, Sharpen mask.</li>
+<li><code class="docutils literal notranslate"><span class="pre">GROW</span></code> Grow Mask, Grow mask.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SHRINK</span></code> Shrink Mask, Shrink mask.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CONTRAST_INCREASE</span></code> Increase contrast, Increase the contrast of the paint mask.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CONTRAST_DECREASE</span></code> Decrease contrast, Decrease the contrast of the paint mask.</li>
+</ul>
+</li>
+<li><strong>iterations</strong> (<em>int in</em><em> [</em><em>1</em><em>, </em><em>100</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Iterations, Number of times that the filter is going to be applied</li>
+<li><strong>auto_iteration_count</strong> (<em>boolean</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Auto Iteration Count, Use a automatic number of iterations based on the number of vertices of the sculpt</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.mesh_filter">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">mesh_filter</code><span class="sig-paren">(</span><em>type='INFLATE'</em>, <em>strength=1.0</em>, <em>deform_axis={'X'</em>, <em>'Y'</em>, <em>'Z'}</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.mesh_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a filter to modify the current mesh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<em>enum in</em><em> [</em><em>'SMOOTH'</em><em>, </em><em>'SCALE'</em><em>, </em><em>'INFLATE'</em><em>, </em><em>'SPHERE'</em><em>, </em><em>'RANDOM'</em><em>, </em><em>'RELAX'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Filter type, Operation that is going to be applied to the mesh</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SMOOTH</span></code> Smooth, Smooth mesh.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SCALE</span></code> Scale, Scale mesh.</li>
+<li><code class="docutils literal notranslate"><span class="pre">INFLATE</span></code> Inflate, Inflate mesh.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SPHERE</span></code> Sphere, Morph into sphere.</li>
+<li><code class="docutils literal notranslate"><span class="pre">RANDOM</span></code> Random, Randomize vertex positions.</li>
+<li><code class="docutils literal notranslate"><span class="pre">RELAX</span></code> Relax, Relax mesh.</li>
+</ul>
+</li>
+<li><strong>strength</strong> (<em>float in</em><em> [</em><em>-10</em><em>, </em><em>10</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Strength, Filter Strength</li>
+<li><strong>deform_axis</strong> (<em>enum set in {'X'</em><em>, </em><em>'Y'</em><em>, </em><em>'Z'}</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Deform axis, Apply the deformation in the selected axis</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> X, Deform in the X axis.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Y</span></code> Y, Deform in the Y axis.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Z</span></code> Z, Deform in the Z axis.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.optimize">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">optimize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.optimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recalculate the sculpt BVH to improve performance</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.sample_detail_size">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">sample_detail_size</code><span class="sig-paren">(</span><em>location=(0</em>, <em>0)</em>, <em>mode='DYNTOPO'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.sample_detail_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample the mesh detail on clicked point</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>location</strong> (<em>int array of 2 items in</em><em> [</em><em>0</em><em>, </em><em>32767</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – Location, Screen Coordinates of sampling</li>
+<li><strong>mode</strong> (<em>enum in</em><em> [</em><em>'DYNTOPO'</em><em>, </em><em>'VOXEL'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Detail Mode, Target sculpting workflow that is going to use the sampled size</p>
+<ul>
+<li><code class="docutils literal notranslate"><span class="pre">DYNTOPO</span></code> Dyntopo, Sample dyntopo detail.</li>
+<li><code class="docutils literal notranslate"><span class="pre">VOXEL</span></code> Voxel, Sample mesh voxel size.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.sculptmode_toggle">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">sculptmode_toggle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.sculptmode_toggle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle sculpt mode in 3D view</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.set_detail_size">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">set_detail_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.set_detail_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mesh detail (either relative or constant one, depending on current dyntopo mode)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.set_persistent_base">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">set_persistent_base</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.set_persistent_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the copy of the mesh that is being sculpted on</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.set_pivot_position">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">set_pivot_position</code><span class="sig-paren">(</span><em>mode='UNMASKED'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.set_pivot_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the sculpt transform pivot position</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>enum in</em><em> [</em><em>'ORIGIN'</em><em>, </em><em>'UNMASKED'</em><em>, </em><em>'BORDER'</em><em>, </em><em>'ACTIVE'</em><em>, </em><em>'SURFACE'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Mode</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ORIGIN</span></code> Origin, Sets the pivot to the origin of the sculpt.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UNMASKED</span></code> Unmasked, Sets the pivot position to the average position of the unmasked vertices.</li>
+<li><code class="docutils literal notranslate"><span class="pre">BORDER</span></code> Mask border, Sets the pivot position to the center of the border of the mask.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> Active vertex, Sets the pivot position to the active vertex position.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SURFACE</span></code> Surface, Sets the pivot position to the surface under the cursor.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.symmetrize">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">symmetrize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.symmetrize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Symmetrize the topology modifications</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bpy.ops.sculpt.uv_sculpt_stroke">
+<code class="descclassname">bpy.ops.sculpt.</code><code class="descname">uv_sculpt_stroke</code><span class="sig-paren">(</span><em>mode='NORMAL'</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.ops.sculpt.uv_sculpt_stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sculpt UVs using a brush</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>enum in</em><em> [</em><em>'NORMAL'</em><em>, </em><em>'INVERT'</em><em>, </em><em>'RELAX'</em><em>]</em><em>, </em><em>(</em><em>optional</em><em>)</em>) – <p>Mode, Stroke Mode</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> Regular, Apply brush normally.</li>
+<li><code class="docutils literal notranslate"><span class="pre">INVERT</span></code> Invert, Invert action of brush for duration of stroke.</li>
+<li><code class="docutils literal notranslate"><span class="pre">RELAX</span></code> Relax, Switch brush to relax mode for duration of stroke.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bpy.ops.sequencer.html" class="btn btn-neutral float-right" title="Sequencer Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpy.ops.script.html" class="btn btn-neutral float-left" title="Script Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "blender-node",
+  "version": "1.0.0",
+  "description": "NodeJS binding to the Blender Python Scripting Environment",
+  "main": "index.js",
+  "scripts": {
+    "generate": "smoke-task generate false",
+    "generate:full": "smoke-task generate true",
+    "example:index": "smoke-task example index",
+    "example:scene": "smoke-task example scene",
+    "example:render": "smoke-task example render",
+    "start": "smoke-task example index",
+    "build": "smoke-task build",
+    "clean": "smoke-task clean"
+  },
+  "keywords": [
+    "blender",
+    "interop",
+    "graphics",
+    "automation"
+  ],
+  "author": "sinclairzx81",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.17",
+    "@types/node": "^13.11.0",
+    "cheerio": "^1.0.0-rc.3",
+    "smoke-run": "^1.1.1",
+    "smoke-task": "^1.1.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {}
+}

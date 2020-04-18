@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>CyclesCameraSettings(PropertyGroup) &#8212; Blender 2.79.0 855d2955c49 - API documentation</title>
+  <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT:    './',
+      VERSION:     '2.79.0 855d2955c49 - API',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE:  false,
+      SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+  <script type="text/javascript" src="_static/jquery.js"></script>
+  <script type="text/javascript" src="_static/underscore.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="CyclesCurveRenderSettings(PropertyGroup)" href="bpy.types.CyclesCurveRenderSettings.html" />
+  <link rel="prev" title="CurvesModifier(SequenceModifier)" href="bpy.types.CurvesModifier.html" /> 
+</head>
+<body>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right" style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           accesskey="I">index</a></li>
+      <li class="right" >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesCurveRenderSettings.html" title="CyclesCurveRenderSettings(PropertyGroup)"
+           accesskey="N">next</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CurvesModifier.html" title="CurvesModifier(SequenceModifier)"
+           accesskey="P">previous</a> |</li>
+      <li class="nav-item nav-item-0"><a href="contents.html">Blender 2.79.0 855d2955c49 - API documentation</a> &#187;</li>
+        <li class="nav-item nav-item-1"><a href="bpy.types.html" accesskey="U">Types (bpy.types)</a> &#187;</li> 
+    </ul>
+  </div>  
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+        <div class="body" role="main">
+          
+<div class="section" id="module-bpy.types">
+<span id="cyclescamerasettings-propertygroup"></span><h1>CyclesCameraSettings(PropertyGroup)<a class="headerlink" href="#module-bpy.types" title="Permalink to this headline">¶</a></h1>
+<p>base classes — <a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct" title="bpy.types.bpy_struct"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct</span></code></a>, <a class="reference internal" href="bpy.types.PropertyGroup.html#bpy.types.PropertyGroup" title="bpy.types.PropertyGroup"><code class="xref py py-class docutils literal"><span class="pre">PropertyGroup</span></code></a></p>
+<dl class="class">
+<dt id="bpy.types.CyclesCameraSettings">
+<em class="property">class </em><code class="descclassname">bpy.types.</code><code class="descname">CyclesCameraSettings</code><span class="sig-paren">(</span><em>PropertyGroup</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.types.CyclesCameraSettings" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.aperture_blades">
+<code class="descname">aperture_blades</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.aperture_blades" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of blades in aperture for polygonal bokeh (at least 3)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 100], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.aperture_fstop">
+<code class="descname">aperture_fstop</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.aperture_fstop" title="Permalink to this definition">¶</a></dt>
+<dd><p>F-stop ratio (lower numbers give more defocus, higher numbers give a sharper image)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, inf], default 5.6</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.aperture_ratio">
+<code class="descname">aperture_ratio</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.aperture_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distortion to simulate anamorphic lens bokeh</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, inf], default 1.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.aperture_rotation">
+<code class="descname">aperture_rotation</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.aperture_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotation of blades in aperture</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-inf, inf], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.aperture_size">
+<code class="descname">aperture_size</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.aperture_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Radius of the aperture for depth of field (higher values give more defocus)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, inf], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.aperture_type">
+<code class="descname">aperture_type</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.aperture_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use f-stop number or aperture radius</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">RADIUS</span></code> Radius, Directly change the size of the aperture.</li>
+<li><code class="docutils literal"><span class="pre">FSTOP</span></code> F-stop, Change the size of the aperture by f-stop.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘RADIUS’, ‘FSTOP’], default ‘RADIUS’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.fisheye_fov">
+<code class="descname">fisheye_fov</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.fisheye_fov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field of view for the fisheye lens</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.1745, 31.4159], default 3.14159</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.fisheye_lens">
+<code class="descname">fisheye_lens</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.fisheye_lens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lens focal length (mm)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, 100], default 10.5</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.latitude_max">
+<code class="descname">latitude_max</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.latitude_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum latitude (vertical angle) for the equirectangular lens</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-1.5708, 1.5708], default 1.5708</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.latitude_min">
+<code class="descname">latitude_min</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.latitude_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum latitude (vertical angle) for the equirectangular lens</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-1.5708, 1.5708], default -1.5708</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.longitude_max">
+<code class="descname">longitude_max</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.longitude_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum longitude (horizontal angle) for the equirectangular lens</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-3.14159, 3.14159], default 3.14159</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.longitude_min">
+<code class="descname">longitude_min</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.longitude_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum longitude (horizontal angle) for the equirectangular lens</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [-3.14159, 3.14159], default -3.14159</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesCameraSettings.panorama_type">
+<code class="descname">panorama_type</code><a class="headerlink" href="#bpy.types.CyclesCameraSettings.panorama_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distortion to use for the calculation</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">EQUIRECTANGULAR</span></code> Equirectangular, Render the scene with a spherical camera, also known as Lat Long panorama.</li>
+<li><code class="docutils literal"><span class="pre">FISHEYE_EQUIDISTANT</span></code> Fisheye Equidistant, Ideal for fulldomes, ignore the sensor dimensions.</li>
+<li><code class="docutils literal"><span class="pre">FISHEYE_EQUISOLID</span></code> Fisheye Equisolid, Similar to most fisheye modern lens, takes sensor dimensions into consideration.</li>
+<li><code class="docutils literal"><span class="pre">MIRRORBALL</span></code> Mirror Ball, Uses the mirror ball mapping.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘EQUIRECTANGULAR’, ‘FISHEYE_EQUIDISTANT’, ‘FISHEYE_EQUISOLID’, ‘MIRRORBALL’], default ‘FISHEYE_EQUISOLID’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Inherited Properties</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.id_data" title="bpy.types.bpy_struct.id_data"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.id_data</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.PropertyGroup.html#bpy.types.PropertyGroup.name" title="bpy.types.PropertyGroup.name"><code class="xref py py-class docutils literal"><span class="pre">PropertyGroup.name</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">Inherited Functions</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.as_pointer" title="bpy.types.bpy_struct.as_pointer"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.as_pointer</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_add" title="bpy.types.bpy_struct.driver_add"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.driver_add</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_remove" title="bpy.types.bpy_struct.driver_remove"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.driver_remove</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.get" title="bpy.types.bpy_struct.get"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.get</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_hidden" title="bpy.types.bpy_struct.is_property_hidden"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_hidden</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_readonly" title="bpy.types.bpy_struct.is_property_readonly"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_readonly</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_set" title="bpy.types.bpy_struct.is_property_set"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_set</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.items" title="bpy.types.bpy_struct.items"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.items</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_delete" title="bpy.types.bpy_struct.keyframe_delete"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keyframe_delete</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_insert" title="bpy.types.bpy_struct.keyframe_insert"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keyframe_insert</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keys" title="bpy.types.bpy_struct.keys"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keys</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_from_id" title="bpy.types.bpy_struct.path_from_id"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.path_from_id</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_resolve" title="bpy.types.bpy_struct.path_resolve"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.path_resolve</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.property_unset" title="bpy.types.bpy_struct.property_unset"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.property_unset</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.type_recast" title="bpy.types.bpy_struct.type_recast"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.type_recast</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.values" title="bpy.types.bpy_struct.values"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.values</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">References</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.Camera.html#bpy.types.Camera.cycles" title="bpy.types.Camera.cycles"><code class="xref py py-class docutils literal"><span class="pre">Camera.cycles</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+</ul>
+</td></tr></table>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+          <p class="logo"><a href="contents.html">
+            <img class="logo" src="_static/blender_logo.svg" alt="Logo"/>
+          </a></p>
+<h4>Previous topic</h4>
+<p class="topless"><a href="bpy.types.CurvesModifier.html"
+                      title="previous chapter">CurvesModifier(SequenceModifier)</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="bpy.types.CyclesCurveRenderSettings.html"
+                      title="next chapter">CyclesCurveRenderSettings(PropertyGroup)</a></p>
+<div id="searchbox" style="display: none" role="search">
+<h3>Quick search</h3>
+  <form class="search" action="search.html" method="get">
+    <div><input type="text" name="q" /></div>
+    <div><input type="submit" value="Go" /></div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right" style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           >index</a></li>
+      <li class="right" >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesCurveRenderSettings.html" title="CyclesCurveRenderSettings(PropertyGroup)"
+           >next</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CurvesModifier.html" title="CurvesModifier(SequenceModifier)"
+           >previous</a> |</li>
+      <li class="nav-item nav-item-0"><a href="contents.html">Blender 2.79.0 855d2955c49 - API documentation</a> &#187;</li>
+        <li class="nav-item nav-item-1"><a href="bpy.types.html" >Types (bpy.types)</a> &#187;</li> 
+    </ul>
+  </div>
+  <div class="footer" role="contentinfo">
+      &#169; Copyright Blender Foundation.
+  </div>
+</body>
+</html>

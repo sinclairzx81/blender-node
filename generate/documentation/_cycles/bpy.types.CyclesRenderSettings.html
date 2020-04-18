@@ -1,0 +1,1415 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>CyclesRenderSettings(PropertyGroup) &#8212; Blender 2.79.0 855d2955c49 - API documentation</title>
+  <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT:    './',
+      VERSION:     '2.79.0 855d2955c49 - API',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE:  false,
+      SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+  <script type="text/javascript" src="_static/jquery.js"></script>
+  <script type="text/javascript" src="_static/underscore.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="CyclesVisibilitySettings(PropertyGroup)" href="bpy.types.CyclesVisibilitySettings.html" />
+  <link rel="prev" title="CyclesRenderLayerSettings(PropertyGroup)" href="bpy.types.CyclesRenderLayerSettings.html" /> 
+</head>
+<body>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right" style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           accesskey="I">index</a></li>
+      <li class="right" >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesVisibilitySettings.html" title="CyclesVisibilitySettings(PropertyGroup)"
+           accesskey="N">next</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesRenderLayerSettings.html" title="CyclesRenderLayerSettings(PropertyGroup)"
+           accesskey="P">previous</a> |</li>
+      <li class="nav-item nav-item-0"><a href="contents.html">Blender 2.79.0 855d2955c49 - API documentation</a> &#187;</li>
+        <li class="nav-item nav-item-1"><a href="bpy.types.html" accesskey="U">Types (bpy.types)</a> &#187;</li> 
+    </ul>
+  </div>  
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+        <div class="body" role="main">
+          
+<div class="section" id="module-bpy.types">
+<span id="cyclesrendersettings-propertygroup"></span><h1>CyclesRenderSettings(PropertyGroup)<a class="headerlink" href="#module-bpy.types" title="Permalink to this headline">¶</a></h1>
+<p>base classes — <a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct" title="bpy.types.bpy_struct"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct</span></code></a>, <a class="reference internal" href="bpy.types.PropertyGroup.html#bpy.types.PropertyGroup" title="bpy.types.PropertyGroup"><code class="xref py py-class docutils literal"><span class="pre">PropertyGroup</span></code></a></p>
+<dl class="class">
+<dt id="bpy.types.CyclesRenderSettings">
+<em class="property">class </em><code class="descclassname">bpy.types.</code><code class="descname">CyclesRenderSettings</code><span class="sig-paren">(</span><em>PropertyGroup</em><span class="sig-paren">)</span><a class="headerlink" href="#bpy.types.CyclesRenderSettings" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.aa_samples">
+<code class="descname">aa_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.aa_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of antialiasing samples to render for each pixel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 2097151], default 4</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.ao_bounces">
+<code class="descname">ao_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.ao_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Approximate indirect light with background tinted ambient occlusion at the specified bounce, 0 disables this feature</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.ao_bounces_render">
+<code class="descname">ao_bounces_render</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.ao_bounces_render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Approximate indirect light with background tinted ambient occlusion at the specified bounce, 0 disables this feature</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.ao_samples">
+<code class="descname">ao_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.ao_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of ambient occlusion samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.bake_type">
+<code class="descname">bake_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.bake_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of pass to bake</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘COMBINED’, ‘AO’, ‘SHADOW’, ‘NORMAL’, ‘UV’, ‘EMIT’, ‘ENVIRONMENT’, ‘DIFFUSE’, ‘GLOSSY’, ‘TRANSMISSION’, ‘SUBSURFACE’], default ‘COMBINED’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.blur_glossy">
+<code class="descname">blur_glossy</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.blur_glossy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adaptively blur glossy shaders after blurry bounces, to reduce noise at the cost of accuracy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.camera_cull_margin">
+<code class="descname">camera_cull_margin</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.camera_cull_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Margin for the camera space culling</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 5], default 0.1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.caustics_reflective">
+<code class="descname">caustics_reflective</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.caustics_reflective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use reflective caustics, resulting in a brighter image (more noise but added realism)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.caustics_refractive">
+<code class="descname">caustics_refractive</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.caustics_refractive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use refractive caustics, resulting in a brighter image (more noise but added realism)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_bvh_time_steps">
+<code class="descname">debug_bvh_time_steps</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_bvh_time_steps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split BVH primitives by this number of time steps to speed up render time in cost of memory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 16], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_bvh_type">
+<code class="descname">debug_bvh_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_bvh_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose between faster updates, or faster render</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">DYNAMIC_BVH</span></code> Dynamic BVH, Objects can be individually updated, at the cost of slower render time.</li>
+<li><code class="docutils literal"><span class="pre">STATIC_BVH</span></code> Static BVH, Any object modification requires a complete BVH rebuild, but renders faster.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘DYNAMIC_BVH’, ‘STATIC_BVH’], default ‘DYNAMIC_BVH’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_cancel_timeout">
+<code class="descname">debug_cancel_timeout</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_cancel_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, 10], default 0.1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_opencl_device_type">
+<code class="descname">debug_opencl_device_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_opencl_device_type" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NONE’, ‘ALL’, ‘DEFAULT’, ‘CPU’, ‘GPU’, ‘ACCELERATOR’], default ‘ALL’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_opencl_kernel_single_program">
+<code class="descname">debug_opencl_kernel_single_program</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_opencl_kernel_single_program" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_opencl_kernel_type">
+<code class="descname">debug_opencl_kernel_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_opencl_kernel_type" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘DEFAULT’, ‘MEGA’, ‘SPLIT’], default ‘DEFAULT’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_opencl_mem_limit">
+<code class="descname">debug_opencl_mem_limit</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_opencl_mem_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Artificial limit on OpenCL memory usage in MB (0 to disable limit)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [-inf, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_reset_timeout">
+<code class="descname">debug_reset_timeout</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_reset_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, 10], default 0.1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_text_timeout">
+<code class="descname">debug_text_timeout</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_text_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, 10], default 1.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_tile_size">
+<code class="descname">debug_tile_size</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_tile_size" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 4096], default 1024</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cpu_avx">
+<code class="descname">debug_use_cpu_avx</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cpu_avx" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cpu_avx2">
+<code class="descname">debug_use_cpu_avx2</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cpu_avx2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cpu_split_kernel">
+<code class="descname">debug_use_cpu_split_kernel</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cpu_split_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cpu_sse2">
+<code class="descname">debug_use_cpu_sse2</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cpu_sse2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cpu_sse3">
+<code class="descname">debug_use_cpu_sse3</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cpu_sse3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cpu_sse41">
+<code class="descname">debug_use_cpu_sse41</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cpu_sse41" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cuda_adaptive_compile">
+<code class="descname">debug_use_cuda_adaptive_compile</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cuda_adaptive_compile" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_cuda_split_kernel">
+<code class="descname">debug_use_cuda_split_kernel</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_cuda_split_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_hair_bvh">
+<code class="descname">debug_use_hair_bvh</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_hair_bvh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use special type BVH optimized for hair (uses more ram but renders faster)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_opencl_debug">
+<code class="descname">debug_use_opencl_debug</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_opencl_debug" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_qbvh">
+<code class="descname">debug_use_qbvh</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_qbvh" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.debug_use_spatial_splits">
+<code class="descname">debug_use_spatial_splits</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.debug_use_spatial_splits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use BVH spatial splits: longer builder time, faster render</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.device">
+<code class="descname">device</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Device to use for rendering</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">CPU</span></code> CPU, Use CPU for rendering.</li>
+<li><code class="docutils literal"><span class="pre">GPU</span></code> GPU Compute, Use GPU compute device for rendering, configured in the system tab in the user preferences.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘CPU’, ‘GPU’], default ‘CPU’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.dicing_rate">
+<code class="descname">dicing_rate</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.dicing_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of a micropolygon in pixels</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.1, 1000], default 1.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.diffuse_bounces">
+<code class="descname">diffuse_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.diffuse_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of diffuse reflection bounces, bounded by total maximum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 4</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.diffuse_samples">
+<code class="descname">diffuse_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.diffuse_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of diffuse bounce samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.distance_cull_margin">
+<code class="descname">distance_cull_margin</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.distance_cull_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cull objects which are further away from camera than this distance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, inf], default 50.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.feature_set">
+<code class="descname">feature_set</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.feature_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feature set to use for rendering</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">SUPPORTED</span></code> Supported, Only use finished and supported features.</li>
+<li><code class="docutils literal"><span class="pre">EXPERIMENTAL</span></code> Experimental, Use experimental and incomplete features that might be broken or change in the future.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘SUPPORTED’, ‘EXPERIMENTAL’], default ‘SUPPORTED’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.film_exposure">
+<code class="descname">film_exposure</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.film_exposure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Image brightness scale</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 10], default 1.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.film_transparent">
+<code class="descname">film_transparent</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.film_transparent" title="Permalink to this definition">¶</a></dt>
+<dd><p>World background is transparent with premultiplied alpha</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.filter_type">
+<code class="descname">filter_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.filter_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pixel filter type</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">BOX</span></code> Box, Box filter.</li>
+<li><code class="docutils literal"><span class="pre">GAUSSIAN</span></code> Gaussian, Gaussian filter.</li>
+<li><code class="docutils literal"><span class="pre">BLACKMAN_HARRIS</span></code> Blackman-Harris, Blackman-Harris filter.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘BOX’, ‘GAUSSIAN’, ‘BLACKMAN_HARRIS’], default ‘BLACKMAN_HARRIS’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.filter_width">
+<code class="descname">filter_width</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.filter_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pixel filter width</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.01, 10], default 1.5</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.glossy_bounces">
+<code class="descname">glossy_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.glossy_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of glossy reflection bounces, bounded by total maximum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 4</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.glossy_samples">
+<code class="descname">glossy_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.glossy_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of glossy bounce samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.light_sampling_threshold">
+<code class="descname">light_sampling_threshold</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.light_sampling_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probabilistically terminate light samples when the light contribution is below this threshold (more noise but faster rendering). Zero disables the test and never ignores lights</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.01</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.max_bounces">
+<code class="descname">max_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.max_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total maximum number of bounces</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 12</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.max_subdivisions">
+<code class="descname">max_subdivisions</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.max_subdivisions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop subdividing when this level is reached even if the dice rate would produce finer tessellation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 16], default 12</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.mesh_light_samples">
+<code class="descname">mesh_light_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.mesh_light_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of mesh emission light samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.min_bounces">
+<code class="descname">min_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.min_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum number of bounces, setting this lower than the maximum enables probabilistic path termination (faster but noisier)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 3</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.motion_blur_position">
+<code class="descname">motion_blur_position</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.motion_blur_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset for the shutter’s time interval, allows to change the motion blur trails</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">START</span></code> Start on Frame, The shutter opens at the current frame.</li>
+<li><code class="docutils literal"><span class="pre">CENTER</span></code> Center on Frame, The shutter is open during the current frame.</li>
+<li><code class="docutils literal"><span class="pre">END</span></code> End on Frame, The shutter closes at the current frame.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘START’, ‘CENTER’, ‘END’], default ‘CENTER’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.pixel_filter_type">
+<code class="descname">pixel_filter_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.pixel_filter_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pixel filter type</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">BOX</span></code> Box, Box filter.</li>
+<li><code class="docutils literal"><span class="pre">GAUSSIAN</span></code> Gaussian, Gaussian filter.</li>
+<li><code class="docutils literal"><span class="pre">BLACKMAN_HARRIS</span></code> Blackman-Harris, Blackman-Harris filter.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘BOX’, ‘GAUSSIAN’, ‘BLACKMAN_HARRIS’], default ‘BLACKMAN_HARRIS’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.preview_aa_samples">
+<code class="descname">preview_aa_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.preview_aa_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of antialiasing samples to render in the viewport, unlimited if 0</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 2097151], default 4</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.preview_active_layer">
+<code class="descname">preview_active_layer</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.preview_active_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preview active render layer in viewport</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.preview_dicing_rate">
+<code class="descname">preview_dicing_rate</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.preview_dicing_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of a micropolygon in pixels during preview render</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0.1, 1000], default 8.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.preview_pause">
+<code class="descname">preview_pause</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.preview_pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pause all viewport preview renders</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.preview_samples">
+<code class="descname">preview_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.preview_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of samples to render in the viewport, unlimited if 0</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, inf], default 32</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.preview_start_resolution">
+<code class="descname">preview_start_resolution</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.preview_start_resolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolution to start rendering preview at, progressively increasing it to the full viewport size</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [8, 16384], default 64</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.progressive">
+<code class="descname">progressive</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.progressive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to sample lights and materials</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">BRANCHED_PATH</span></code> Branched Path Tracing, Path tracing integrator that branches on the first bounce, giving more control over the number of light and material samples.</li>
+<li><code class="docutils literal"><span class="pre">PATH</span></code> Path Tracing, Pure path tracing integrator.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘BRANCHED_PATH’, ‘PATH’], default ‘PATH’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.rolling_shutter_duration">
+<code class="descname">rolling_shutter_duration</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.rolling_shutter_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scanline “exposure” time for the rolling shutter effect</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, 1], default 0.1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.rolling_shutter_type">
+<code class="descname">rolling_shutter_type</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.rolling_shutter_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of rolling shutter effect matching CMOS-based cameras</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">NONE</span></code> None, No rolling shutter effect used.</li>
+<li><code class="docutils literal"><span class="pre">TOP</span></code> Top-Bottom, Sensor is being scanned from top to bottom.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘NONE’, ‘TOP’], default ‘NONE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.sample_all_lights_direct">
+<code class="descname">sample_all_lights_direct</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.sample_all_lights_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample all lights (for direct samples), rather than randomly picking one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.sample_all_lights_indirect">
+<code class="descname">sample_all_lights_indirect</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.sample_all_lights_indirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample all lights (for indirect samples), rather than randomly picking one</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.sample_clamp_direct">
+<code class="descname">sample_clamp_direct</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.sample_clamp_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>If non-zero, the maximum value for a direct sample, higher values will be scaled down to avoid too much noise and slow convergence at the cost of accuracy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, inf], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.sample_clamp_indirect">
+<code class="descname">sample_clamp_indirect</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.sample_clamp_indirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>If non-zero, the maximum value for an indirect sample, higher values will be scaled down to avoid too much noise and slow convergence at the cost of accuracy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [0, inf], default 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.samples">
+<code class="descname">samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of samples to render for each pixel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, inf], default 128</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.sampling_pattern">
+<code class="descname">sampling_pattern</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.sampling_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Random sampling pattern used by the integrator</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">SOBOL</span></code> Sobol, Use Sobol random sampling pattern.</li>
+<li><code class="docutils literal"><span class="pre">CORRELATED_MUTI_JITTER</span></code> Correlated Multi-Jitter, Use Correlated Multi-Jitter random sampling pattern.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘SOBOL’, ‘CORRELATED_MUTI_JITTER’], default ‘SOBOL’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.seed">
+<code class="descname">seed</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seed value for integrator to get different noise patterns</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, inf], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.shading_system">
+<code class="descname">shading_system</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.shading_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use Open Shading Language (CPU rendering only)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.subsurface_samples">
+<code class="descname">subsurface_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.subsurface_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of subsurface scattering samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.texture_limit">
+<code class="descname">texture_limit</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.texture_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit texture size used by viewport rendering</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">OFF</span></code> No Limit, No texture size limit.</li>
+<li><code class="docutils literal"><span class="pre">128</span></code> 128, Limit texture size to 128 pixels.</li>
+<li><code class="docutils literal"><span class="pre">256</span></code> 256, Limit texture size to 256 pixels.</li>
+<li><code class="docutils literal"><span class="pre">512</span></code> 512, Limit texture size to 512 pixels.</li>
+<li><code class="docutils literal"><span class="pre">1024</span></code> 1024, Limit texture size to 1024 pixels.</li>
+<li><code class="docutils literal"><span class="pre">2048</span></code> 2048, Limit texture size to 2048 pixels.</li>
+<li><code class="docutils literal"><span class="pre">4096</span></code> 4096, Limit texture size to 4096 pixels.</li>
+<li><code class="docutils literal"><span class="pre">8192</span></code> 8192, Limit texture size to 8192 pixels.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘OFF’, ‘128’, ‘256’, ‘512’, ‘1024’, ‘2048’, ‘4096’, ‘8192’], default ‘OFF’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.texture_limit_render">
+<code class="descname">texture_limit_render</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.texture_limit_render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit texture size used by final rendering</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">OFF</span></code> No Limit, No texture size limit.</li>
+<li><code class="docutils literal"><span class="pre">128</span></code> 128, Limit texture size to 128 pixels.</li>
+<li><code class="docutils literal"><span class="pre">256</span></code> 256, Limit texture size to 256 pixels.</li>
+<li><code class="docutils literal"><span class="pre">512</span></code> 512, Limit texture size to 512 pixels.</li>
+<li><code class="docutils literal"><span class="pre">1024</span></code> 1024, Limit texture size to 1024 pixels.</li>
+<li><code class="docutils literal"><span class="pre">2048</span></code> 2048, Limit texture size to 2048 pixels.</li>
+<li><code class="docutils literal"><span class="pre">4096</span></code> 4096, Limit texture size to 4096 pixels.</li>
+<li><code class="docutils literal"><span class="pre">8192</span></code> 8192, Limit texture size to 8192 pixels.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘OFF’, ‘128’, ‘256’, ‘512’, ‘1024’, ‘2048’, ‘4096’, ‘8192’], default ‘OFF’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.tile_order">
+<code class="descname">tile_order</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.tile_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tile order for rendering</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">CENTER</span></code> Center, Render from center to the edges.</li>
+<li><code class="docutils literal"><span class="pre">RIGHT_TO_LEFT</span></code> Right to Left, Render from right to left.</li>
+<li><code class="docutils literal"><span class="pre">LEFT_TO_RIGHT</span></code> Left to Right, Render from left to right.</li>
+<li><code class="docutils literal"><span class="pre">TOP_TO_BOTTOM</span></code> Top to Bottom, Render from top to bottom.</li>
+<li><code class="docutils literal"><span class="pre">BOTTOM_TO_TOP</span></code> Bottom to Top, Render from bottom to top.</li>
+<li><code class="docutils literal"><span class="pre">HILBERT_SPIRAL</span></code> Hilbert Spiral, Render in a Hilbert Spiral.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘CENTER’, ‘RIGHT_TO_LEFT’, ‘LEFT_TO_RIGHT’, ‘TOP_TO_BOTTOM’, ‘BOTTOM_TO_TOP’, ‘HILBERT_SPIRAL’], default ‘HILBERT_SPIRAL’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.transmission_bounces">
+<code class="descname">transmission_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.transmission_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of transmission bounces, bounded by total maximum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 12</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.transmission_samples">
+<code class="descname">transmission_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.transmission_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of transmission bounce samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.transparent_max_bounces">
+<code class="descname">transparent_max_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.transparent_max_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of transparent bounces</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 8</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.transparent_min_bounces">
+<code class="descname">transparent_min_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.transparent_min_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum number of transparent bounces, setting this lower than the maximum enables probabilistic path termination (faster but noisier)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 8</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_animated_seed">
+<code class="descname">use_animated_seed</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_animated_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use different seed values (and hence noise patterns) at different frames</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_camera_cull">
+<code class="descname">use_camera_cull</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_camera_cull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow objects to be culled based on the camera frustum</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_distance_cull">
+<code class="descname">use_distance_cull</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_distance_cull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow objects to be culled based on the distance from camera</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_layer_samples">
+<code class="descname">use_layer_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_layer_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>How to use per render layer sample settings</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">USE</span></code> Use, Per render layer number of samples override scene samples.</li>
+<li><code class="docutils literal"><span class="pre">BOUNDED</span></code> Bounded, Bound per render layer number of samples by global samples.</li>
+<li><code class="docutils literal"><span class="pre">IGNORE</span></code> Ignore, Ignore per render layer number of samples.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">enum in [‘USE’, ‘BOUNDED’, ‘IGNORE’], default ‘USE’</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_progressive_refine">
+<code class="descname">use_progressive_refine</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_progressive_refine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instead of rendering each tile until it is finished, refine the whole image progressively (this renders somewhat slower, but time can be saved by manually stopping the render when the noise is low enough)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_square_samples">
+<code class="descname">use_square_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_square_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Square sampling values for easier artist control</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.use_transparent_shadows">
+<code class="descname">use_transparent_shadows</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.use_transparent_shadows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use transparency of surfaces for rendering shadows</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">boolean, default True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.volume_bounces">
+<code class="descname">volume_bounces</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.volume_bounces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of volumetric scattering events</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [0, 1024], default 0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.volume_max_steps">
+<code class="descname">volume_max_steps</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.volume_max_steps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of steps through the volume before giving up, to avoid extremely long render times with big objects or small step sizes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [2, 65536], default 1024</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.volume_samples">
+<code class="descname">volume_samples</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.volume_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of volume scattering samples to render for each AA sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int in [1, 1024], default 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bpy.types.CyclesRenderSettings.volume_step_size">
+<code class="descname">volume_step_size</code><a class="headerlink" href="#bpy.types.CyclesRenderSettings.volume_step_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance between volume shader samples when rendering the volume (lower values give more accurate and detailed results, but also increased render time)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float in [1e-07, 100000], default 0.1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Inherited Properties</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.id_data" title="bpy.types.bpy_struct.id_data"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.id_data</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.PropertyGroup.html#bpy.types.PropertyGroup.name" title="bpy.types.PropertyGroup.name"><code class="xref py py-class docutils literal"><span class="pre">PropertyGroup.name</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">Inherited Functions</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.as_pointer" title="bpy.types.bpy_struct.as_pointer"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.as_pointer</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_add" title="bpy.types.bpy_struct.driver_add"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.driver_add</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.driver_remove" title="bpy.types.bpy_struct.driver_remove"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.driver_remove</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.get" title="bpy.types.bpy_struct.get"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.get</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_hidden" title="bpy.types.bpy_struct.is_property_hidden"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_hidden</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_readonly" title="bpy.types.bpy_struct.is_property_readonly"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_readonly</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.is_property_set" title="bpy.types.bpy_struct.is_property_set"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.is_property_set</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.items" title="bpy.types.bpy_struct.items"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.items</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_delete" title="bpy.types.bpy_struct.keyframe_delete"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keyframe_delete</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keyframe_insert" title="bpy.types.bpy_struct.keyframe_insert"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keyframe_insert</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.keys" title="bpy.types.bpy_struct.keys"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.keys</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_from_id" title="bpy.types.bpy_struct.path_from_id"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.path_from_id</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.path_resolve" title="bpy.types.bpy_struct.path_resolve"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.path_resolve</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.property_unset" title="bpy.types.bpy_struct.property_unset"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.property_unset</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.type_recast" title="bpy.types.bpy_struct.type_recast"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.type_recast</span></code></a></li>
+<li><a class="reference internal" href="bpy.types.bpy_struct.html#bpy.types.bpy_struct.values" title="bpy.types.bpy_struct.values"><code class="xref py py-class docutils literal"><span class="pre">bpy_struct.values</span></code></a></li>
+</ul>
+</td></tr></table>
+<p class="rubric">References</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="bpy.types.Scene.html#bpy.types.Scene.cycles" title="bpy.types.Scene.cycles"><code class="xref py py-class docutils literal"><span class="pre">Scene.cycles</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+</ul>
+</td></tr></table>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+          <p class="logo"><a href="contents.html">
+            <img class="logo" src="_static/blender_logo.svg" alt="Logo"/>
+          </a></p>
+<h4>Previous topic</h4>
+<p class="topless"><a href="bpy.types.CyclesRenderLayerSettings.html"
+                      title="previous chapter">CyclesRenderLayerSettings(PropertyGroup)</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="bpy.types.CyclesVisibilitySettings.html"
+                      title="next chapter">CyclesVisibilitySettings(PropertyGroup)</a></p>
+<div id="searchbox" style="display: none" role="search">
+<h3>Quick search</h3>
+  <form class="search" action="search.html" method="get">
+    <div><input type="text" name="q" /></div>
+    <div><input type="submit" value="Go" /></div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right" style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           >index</a></li>
+      <li class="right" >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesVisibilitySettings.html" title="CyclesVisibilitySettings(PropertyGroup)"
+           >next</a> |</li>
+      <li class="right" >
+        <a href="bpy.types.CyclesRenderLayerSettings.html" title="CyclesRenderLayerSettings(PropertyGroup)"
+           >previous</a> |</li>
+      <li class="nav-item nav-item-0"><a href="contents.html">Blender 2.79.0 855d2955c49 - API documentation</a> &#187;</li>
+        <li class="nav-item nav-item-1"><a href="bpy.types.html" >Types (bpy.types)</a> &#187;</li> 
+    </ul>
+  </div>
+  <div class="footer" role="contentinfo">
+      &#169; Copyright Blender Foundation.
+  </div>
+</body>
+</html>

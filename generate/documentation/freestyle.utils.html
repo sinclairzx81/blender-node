@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Freestyle Utilities (freestyle.utils) &mdash; Blender Python API</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/api/current/freestyle.utils.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Python API"
+          href="_static/opensearch.xml"/>
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="freestyle.utils submodule (freestyle.utils.ContextFunctions)" href="freestyle.utils.ContextFunctions.html" />
+    <link rel="prev" title="Freestyle Shaders (freestyle.shaders)" href="freestyle.shaders.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blender 2.82a Python API
+          
+
+          
+            
+            <img src="_static/blender_logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                375c7dc4caf4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info_quickstart.html">Quickstart: new to Blender or scripting and want to get your feet wet?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_overview.html">API Overview: a more complete explanation of Python integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_api_reference.html">API Reference Usage: examples of how to use the API reference docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_best_practice.html">Best Practice: Conventions to follow for writing good scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_tips_and_tricks.html">Tips and Tricks: Hints to help you while writing scripts for Blender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_gotcha.html">Gotcha's: some of the problems you may come up against when writing scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">List of changes since last Blender release</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bpy.context.html">Context Access (bpy.context)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.data.html">Data Access (bpy.data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.ops.html">Operators (bpy.ops)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.types.html">Types (bpy.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.html">Utilities (bpy.utils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.utils.previews.html">bpy.utils submodule (bpy.utils.previews)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.path.html">Path Utilities (bpy.path)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.app.html">Application Data (bpy.app)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy.props.html">Property Definitions (bpy.props)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Standalone Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="freestyle.html">Freestyle Module (freestyle)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU Shader Module (gpu)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu_extras.html">GPU Utilities (gpu_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpy_extras.html">Extra Utilities (bpy_extras)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="idprop.types.html">ID Property Access (idprop.types)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bmesh.html">BMesh Module (bmesh)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blender 2.82a Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="freestyle.html">Freestyle Module (freestyle)</a> &raquo;</li>
+        
+      <li>Freestyle Utilities (freestyle.utils)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-freestyle.utils">
+<span id="freestyle-utilities-freestyle-utils"></span><h1>Freestyle Utilities (freestyle.utils)<a class="headerlink" href="#module-freestyle.utils" title="Permalink to this headline">¶</a></h1>
+<p>This module contains helper functions used for Freestyle style module
+writing.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="freestyle.utils.ContextFunctions.html">freestyle.utils submodule (freestyle.utils.ContextFunctions)</a></li>
+</ul>
+</div>
+<dl class="function">
+<dt id="freestyle.utils.getCurrentScene">
+<code class="descclassname">freestyle.utils.</code><code class="descname">getCurrentScene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.getCurrentScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current scene.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current scene.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="bpy.types.Scene.html#bpy.types.Scene" title="bpy.types.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy.types.Scene</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.integrate">
+<code class="descclassname">freestyle.utils.</code><code class="descname">integrate</code><span class="sig-paren">(</span><em>func</em>, <em>it</em>, <em>it_end</em>, <em>integration_type</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.integrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a single value from a set of values evaluated at each 0D
+element of this 1D element.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>func</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">UnaryFunction0D</span></code>) – The UnaryFunction0D used to compute a value at each
+Interface0D.</li>
+<li><strong>it</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Interface0DIterator</span></code>) – The Interface0DIterator used to iterate over the 0D
+elements of this 1D element. The integration will occur over
+the 0D elements starting from the one pointed by it.</li>
+<li><strong>it_end</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Interface0DIterator</span></code>) – The Interface0DIterator pointing the end of the 0D
+elements of the 1D element.</li>
+<li><strong>integration_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">IntegrationType</span></code>) – The integration method used to compute a
+single value from a set of values.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The single value obtained for the 1D element.  The return
+value type is float if func is of the <code class="xref py py-class docutils literal notranslate"><span class="pre">UnaryFunction0DDouble</span></code>
+or <code class="xref py py-class docutils literal notranslate"><span class="pre">UnaryFunction0DFloat</span></code> type, and int if func is of the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">UnaryFunction0DUnsigned</span></code> type.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int or float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.angle_x_normal">
+<code class="descclassname">freestyle.utils.</code><code class="descname">angle_x_normal</code><span class="sig-paren">(</span><em>it: Interface0DIterator</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.angle_x_normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>unsigned angle between a Point’s normal and the X axis, in radians</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.bound">
+<code class="descclassname">freestyle.utils.</code><code class="descname">bound</code><span class="sig-paren">(</span><em>lower</em>, <em>x</em>, <em>higher</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.bound" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Returns x bounded by a maximum and minimum value. Equivalent to:</dt>
+<dd>return min(max(x, lower), higher)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.bounding_box">
+<code class="descclassname">freestyle.utils.</code><code class="descname">bounding_box</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum and minimum coordinates (the bounding box) of the stroke’s vertices</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.curvature_from_stroke_vertex">
+<code class="descclassname">freestyle.utils.</code><code class="descname">curvature_from_stroke_vertex</code><span class="sig-paren">(</span><em>svert</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.curvature_from_stroke_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>The 3D curvature of an stroke vertex’ underlying geometry</dt>
+<dd>The result is None or in the range [-inf, inf]</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.find_matching_vertex">
+<code class="descclassname">freestyle.utils.</code><code class="descname">find_matching_vertex</code><span class="sig-paren">(</span><em>id</em>, <em>it</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.find_matching_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the matching vertex, or returns None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.get_chain_length">
+<code class="descclassname">freestyle.utils.</code><code class="descname">get_chain_length</code><span class="sig-paren">(</span><em>ve</em>, <em>orientation</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.get_chain_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the 2d length of a given ViewEdge.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.get_object_name">
+<code class="descclassname">freestyle.utils.</code><code class="descname">get_object_name</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.get_object_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the object that this stroke is drawn on.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.get_strokes">
+<code class="descclassname">freestyle.utils.</code><code class="descname">get_strokes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.get_strokes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all strokes that are currently available</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.get_test_stroke">
+<code class="descclassname">freestyle.utils.</code><code class="descname">get_test_stroke</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.get_test_stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a static stroke object for testing</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.is_poly_clockwise">
+<code class="descclassname">freestyle.utils.</code><code class="descname">is_poly_clockwise</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.is_poly_clockwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the stroke is orientated in a clockwise way, False otherwise</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.iter_distance_along_stroke">
+<code class="descclassname">freestyle.utils.</code><code class="descname">iter_distance_along_stroke</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.iter_distance_along_stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields the absolute distance along the stroke up to the current vertex.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.iter_distance_from_camera">
+<code class="descclassname">freestyle.utils.</code><code class="descname">iter_distance_from_camera</code><span class="sig-paren">(</span><em>stroke</em>, <em>range_min</em>, <em>range_max</em>, <em>normfac</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.iter_distance_from_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields the distance to the camera relative to the maximum
+possible distance for every stroke vertex, constrained by
+given minimum and maximum values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.iter_distance_from_object">
+<code class="descclassname">freestyle.utils.</code><code class="descname">iter_distance_from_object</code><span class="sig-paren">(</span><em>stroke</em>, <em>location</em>, <em>range_min</em>, <em>range_max</em>, <em>normfac</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.iter_distance_from_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>yields the distance to the given object relative to the maximum
+possible distance for every stroke vertex, constrained by
+given minimum and maximum values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.iter_material_value">
+<code class="descclassname">freestyle.utils.</code><code class="descname">iter_material_value</code><span class="sig-paren">(</span><em>stroke</em>, <em>func</em>, <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.iter_material_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields a specific material attribute from the vertex’ underlying material.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.iter_t2d_along_stroke">
+<code class="descclassname">freestyle.utils.</code><code class="descname">iter_t2d_along_stroke</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.iter_t2d_along_stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields the progress along the stroke.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.material_from_fedge">
+<code class="descclassname">freestyle.utils.</code><code class="descname">material_from_fedge</code><span class="sig-paren">(</span><em>fe</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.material_from_fedge" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the diffuse rgba color from an FEdge</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.normal_at_I0D">
+<code class="descclassname">freestyle.utils.</code><code class="descname">normal_at_I0D</code><span class="sig-paren">(</span><em>it: Interface0DIterator</em><span class="sig-paren">)</span> &#x2192; Vector<a class="headerlink" href="#freestyle.utils.normal_at_I0D" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Normal at an Interface0D object. In contrast to Normal2DF0D this</dt>
+<dd>function uses the actual data instead of underlying Fedge objects.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.pairwise">
+<code class="descclassname">freestyle.utils.</code><code class="descname">pairwise</code><span class="sig-paren">(</span><em>iterable</em>, <em>types={&lt;class 'StrokeVertexIterator'&gt;</em>, <em>&lt;class 'Stroke'&gt;}</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.pairwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields a tuple containing the previous and current object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.rgb_to_bw">
+<code class="descclassname">freestyle.utils.</code><code class="descname">rgb_to_bw</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.rgb_to_bw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to convert rgb to a bw intensity value.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.simplify">
+<code class="descclassname">freestyle.utils.</code><code class="descname">simplify</code><span class="sig-paren">(</span><em>points</em>, <em>tolerance</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplifies a set of points</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.stroke_curvature">
+<code class="descclassname">freestyle.utils.</code><code class="descname">stroke_curvature</code><span class="sig-paren">(</span><em>it</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.stroke_curvature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the 2D curvature at the stroke vertex pointed by the iterator ‘it’.
+K = 1 / R
+where R is the radius of the circle going through the current vertex and its neighbors</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.stroke_normal">
+<code class="descclassname">freestyle.utils.</code><code class="descname">stroke_normal</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.stroke_normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the 2D normal at the stroke vertex pointed by the iterator
+‘it’.  It is noted that Normal2DF0D computes normals based on
+underlying FEdges instead, which is inappropriate for strokes when
+they have already been modified by stroke geometry modifiers.</p>
+<p>The returned normals are dynamic: they update when the
+vertex position (and therefore the vertex normal) changes.
+for use in geometry modifiers it is advised to
+cast this generator function to a tuple or list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="freestyle.utils.tripplewise">
+<code class="descclassname">freestyle.utils.</code><code class="descname">tripplewise</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.tripplewise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields a tuple containing the current object and its immediate neighbors</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="freestyle.utils.BoundingBox">
+<em class="property">class </em><code class="descclassname">freestyle.utils.</code><code class="descname">BoundingBox</code><a class="headerlink" href="#freestyle.utils.BoundingBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object representing a bounding box consisting out of 2 2D vectors</p>
+<dl class="method">
+<dt id="freestyle.utils.BoundingBox.inside">
+<code class="descname">inside</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.BoundingBox.inside" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if self inside other, False otherwise</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="freestyle.utils.StrokeCollector">
+<em class="property">class </em><code class="descclassname">freestyle.utils.</code><code class="descname">StrokeCollector</code><a class="headerlink" href="#freestyle.utils.StrokeCollector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects and Stores stroke objects</p>
+<dl class="method">
+<dt id="freestyle.utils.StrokeCollector.shade">
+<code class="descname">shade</code><span class="sig-paren">(</span><em>stroke</em><span class="sig-paren">)</span><a class="headerlink" href="#freestyle.utils.StrokeCollector.shade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="freestyle.utils.ContextFunctions.html" class="btn btn-neutral float-right" title="freestyle.utils submodule (freestyle.utils.ContextFunctions)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="freestyle.shaders.html" class="btn btn-neutral float-left" title="Freestyle Shaders (freestyle.shaders)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Blender Foundation
+      <span class="lastupdated">
+        Last updated on 03/20/2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

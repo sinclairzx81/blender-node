@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ESNext",
+        "moduleResolution": "node",
+    }, "files": [
+        "index.ts"
+    ]
+}
