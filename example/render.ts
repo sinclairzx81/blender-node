@@ -3,7 +3,9 @@ import { join, dirname } from 'path'
 
 const input  = '../../example/model/model.blend'
 const output = join(dirname(__filename), '../../../output.png')
+console.log('starting blender')
 const bpy = new Blender()
+console.log('opening file')
 bpy.ops.wm.open_mainfile({ filepath: input })
 bpy.context.scene.render.filepath = output
 bpy.context.scene.render.resolution_x = 640

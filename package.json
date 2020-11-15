@@ -27,7 +27,8 @@
     "cheerio": "^1.0.0-rc.3",
     "smoke-run": "^1.1.1",
     "smoke-task": "^1.1.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "typescript-bundle": "^1.0.17"
   },
   "dependencies": {}
 }

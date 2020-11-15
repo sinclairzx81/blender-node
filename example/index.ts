@@ -1,5 +1,7 @@
 import { Blender } from '../src/index'
 
+
+
 interface PyData {
     vertices: ([number, number, number])[],
     edges: ([number, number])[],
